@@ -1,3 +1,5 @@
+## How I view things
+
 The below is my model of how I think about things. Like all models, this is not perfect, and every rule has exceptions. However, the spirit of the statements, when taken together, describe how I view the world.
 
 People care about two broad kinds of things, we will call them: 
