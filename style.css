@@ -383,6 +383,40 @@ footer p { color: var(--text-faint); font-size: 0.8rem; font-family: var(--mono)
   font-family: var(--mono); font-size: 0.8rem; color: var(--accent);
 }
 
+/* ── FEATURED THREAD / CARD ─────── */
+/* Used to highlight a single high-relevance entry on both pages */
+.x-thread--featured {
+  background: var(--bg-card);
+  border: 1px solid var(--accent);
+  border-radius: var(--r);
+  padding: 1.75rem 1.75rem 1.4rem;
+  margin: 2rem 0 2.5rem;
+  position: relative;
+  box-shadow: 0 8px 28px rgba(212, 165, 60, 0.08);
+}
+.x-thread--featured::before {
+  content: 'Featured';
+  position: absolute; top: -10px; left: 1.5rem;
+  font-family: var(--mono); font-size: 0.62rem; font-weight: 600;
+  background: var(--accent); color: var(--bg);
+  padding: 0.22rem 0.65rem; border-radius: 3px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+}
+.x-thread--featured .x-thread-frame {
+  color: var(--heading); font-style: normal;
+  font-family: var(--serif); font-size: 1.05rem;
+  border-left-color: var(--accent);
+}
+.card--featured {
+  border-color: var(--accent);
+  box-shadow: 0 8px 28px rgba(212, 165, 60, 0.10);
+}
+.card-tag--featured {
+  color: var(--bg); background: var(--accent);
+  padding: 0.2rem 0.6rem; border-radius: 3px;
+  font-weight: 600;
+}
+
 /* ── EARLIER GAMES LINE ─────────── */
 .earlier-line {
   margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px dotted var(--border);
