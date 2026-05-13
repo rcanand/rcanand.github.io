@@ -1,134 +1,305 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Products - Anand Ramanathan</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Products - Anand Ramanathan</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <nav>
+            <div class="container">
+                <a href="/" class="nav-logo">Anand Ramanathan</a>
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="reading_list.html">Reading list</a>
+                    <a href="x_threads.html">X threads</a>
+                    <a href="products.html" class="active">Products</a>
+                    <a href="blog/">Blog</a>
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+        </nav>
 
-<nav>
-  <div class="container">
-    <a href="/" class="nav-logo">Anand Ramanathan</a>
-    <div class="nav-links">
-      <a href="/">Home</a>
-      <a href="products.html" class="active">Products</a>
-      <a href="blog/">Blog</a>
-      <a href="about.html">About</a>
-    </div>
-  </div>
-</nav>
+        <header class="hero" style="padding-bottom: 2rem">
+            <div class="container">
+                <p class="hero-label">Products</p>
+                <h1>20 years of building.</h1>
+                <p class="hero-sub">
+                    Each product is part of a larger thread - making complex
+                    technology accessible and enabling people to learn, create,
+                    and discover.
+                </p>
+            </div>
+        </header>
 
-<header class="hero" style="padding-bottom:2rem;">
-  <div class="container">
-    <p class="hero-label">Products</p>
-    <h1>20 years of building.</h1>
-    <p class="hero-sub">Each product is part of a larger thread - making complex technology accessible and enabling people to learn, create, and discover.</p>
-  </div>
-</header>
+        <section>
+            <div class="container">
+                <div class="sec-head">
+                    <h2>Product Timeline</h2>
+                </div>
 
-<section>
-  <div class="container">
-    <div class="sec-head">
-      <h2>Product Timeline</h2>
-    </div>
+                <div class="timeline">
+                    <div class="tl-item">
+                        <span class="tl-year">2026</span>
+                        <h3>Maibook - Your Third Brain</h3>
+                        <p>
+                            Flagship product of MLAI LLC and my current focus. A
+                            private community of personalized AI agents
+                            expanding on your every activity, on-device on Mac
+                            or Windows. Local-first by design - your data never
+                            leaves your computer. "The second brain is an AI
+                            snapshot of you. The third brain is an ongoing AI
+                            live-streaming feed of your activity." Free for a
+                            limited time.
+                        </p>
+                        <div class="tl-tags">
+                            <span class="tag">Desktop</span
+                            ><span class="tag">macOS</span
+                            ><span class="tag">Windows</span
+                            ><span class="tag">Local AI</span
+                            ><span class="tag">MLAI LLC</span>
+                        </div>
+                        <div class="tl-links">
+                            <a href="https://maibook.app" target="_blank"
+                                >maibook.app</a
+                            >
+                            <a
+                                href="https://maibook.app/docs.html"
+                                target="_blank"
+                                >Docs</a
+                            >
+                            <a
+                                href="https://rcanand.gumroad.com/l/cremjz"
+                                target="_blank"
+                                >Gumroad</a
+                            >
+                        </div>
+                    </div>
 
-    <div class="timeline">
+                    <div class="tl-item">
+                        <span class="tl-year">2025</span>
+                        <h3>Claude Code CLI Viewer</h3>
+                        <p>
+                            Dark-mode viewer for Claude Code CLI chat sessions.
+                            Browse, search, and visualize AI coding sessions in
+                            a rich UI. Launched on Hacker News.
+                        </p>
+                        <div class="tl-tags">
+                            <span class="tag">HTML/JS</span
+                            ><span class="tag">Developer Tool</span>
+                        </div>
+                        <div class="tl-links">
+                            <a
+                                href="https://rcanand.gumroad.com/l/ccviewer"
+                                target="_blank"
+                                >Gumroad</a
+                            >
+                        </div>
+                    </div>
 
-      <div class="tl-item">
-        <span class="tl-year">2026</span>
-        <h3>Maibook - Your Third Brain</h3>
-        <p>Flagship product of MLAI LLC and my current focus. A private community of personalized AI agents expanding on your every activity, on-device on Mac or Windows. Local-first by design - your data never leaves your computer. "The second brain is an AI snapshot of you. The third brain is an ongoing AI live-streaming feed of your activity." Free for a limited time.</p>
-        <div class="tl-tags"><span class="tag">Desktop</span><span class="tag">macOS</span><span class="tag">Windows</span><span class="tag">Local AI</span><span class="tag">MLAI LLC</span></div>
-        <div class="tl-links">
-          <a href="https://maibook.app" target="_blank">maibook.app</a>
-          <a href="https://maibook.app/docs.html" target="_blank">Docs</a>
-          <a href="https://rcanand.gumroad.com/l/cremjz" target="_blank">Gumroad</a>
-        </div>
-      </div>
+                    <div class="tl-item">
+                        <span class="tl-year">2025</span>
+                        <h3>ahai - Local AI Idea Discovery</h3>
+                        <p>
+                            Native Mac desktop app using
+                            <a
+                                href="https://github.com/ml-explore/mlx"
+                                target="_blank"
+                                rel="noopener"
+                                >Apple MLX</a
+                            >
+                            to scan markdown files and surface forward-looking
+                            concepts - features to build, content to create,
+                            ideas to explore. "Rediscover what you meant to do."
+                            100% local, privacy-first.
+                            <a
+                                href="https://www.qt.io/qt-for-python"
+                                target="_blank"
+                                rel="noopener"
+                                >PySide6</a
+                            >
+                            +
+                            <a
+                                href="https://github.com/ml-explore/mlx"
+                                target="_blank"
+                                rel="noopener"
+                                >MLX</a
+                            >.
+                        </p>
+                        <div class="tl-tags">
+                            <span class="tag">PySide6</span
+                            ><span class="tag">MLX</span
+                            ><span class="tag">macOS</span
+                            ><span class="tag">MLAI LLC</span>
+                        </div>
+                        <div class="tl-links">
+                            <a href="https://ahai.app" target="_blank"
+                                >Website</a
+                            ><a
+                                href="https://rcanand.gumroad.com/l/ahai_v1_0_0"
+                                target="_blank"
+                                >Gumroad</a
+                            >
+                        </div>
+                    </div>
 
-      <div class="tl-item">
-        <span class="tl-year">2025</span>
-        <h3>Claude Code CLI Viewer</h3>
-        <p>Dark-mode viewer for Claude Code CLI chat sessions. Browse, search, and visualize AI coding sessions in a rich UI. Launched on Hacker News.</p>
-        <div class="tl-tags"><span class="tag">HTML/JS</span><span class="tag">Developer Tool</span></div>
-        <div class="tl-links"><a href="https://rcanand.gumroad.com/l/ccviewer" target="_blank">Gumroad</a></div>
-      </div>
+                    <div class="tl-item">
+                        <span class="tl-year">2024</span>
+                        <h3>Haixu - AI Educational Comics</h3>
+                        <p>
+                            LLM-based pipeline to create educational visual
+                            guides from text. Human-AI collaboration on content
+                            creation. 68+ comics published on Gumroad across
+                            science, history, culture, philosophy, technology. 9
+                            books on Amazon Kindle (author: R. C. Anand). 15
+                            case studies documented on Hashnode.
+                        </p>
+                        <div class="tl-tags">
+                            <span class="tag">Python</span
+                            ><span class="tag">LLM</span
+                            ><span class="tag">MLAI LLC</span
+                            ><span class="tag">Gumroad</span
+                            ><span class="tag">Kindle</span>
+                        </div>
+                        <div class="tl-links">
+                            <a
+                                href="https://rcanand.gumroad.com"
+                                target="_blank"
+                                >Gumroad Store</a
+                            >
+                            <a
+                                href="https://www.amazon.com/stores/R.-C.-Anand/author/B0DNY6PYPW"
+                                target="_blank"
+                                >Kindle</a
+                            >
+                            <a
+                                href="https://rcanand.hashnode.dev/"
+                                target="_blank"
+                                >Case Studies</a
+                            >
+                        </div>
+                    </div>
 
-      <div class="tl-item">
-        <span class="tl-year">2025</span>
-        <h3>ahai - Local AI Idea Discovery</h3>
-        <p>Native Mac desktop app using <a href="https://github.com/ml-explore/mlx" target="_blank" rel="noopener">Apple MLX</a> to scan markdown files and surface forward-looking concepts - features to build, content to create, ideas to explore. "Rediscover what you meant to do." 100% local, privacy-first. <a href="https://www.qt.io/qt-for-python" target="_blank" rel="noopener">PySide6</a> + <a href="https://github.com/ml-explore/mlx" target="_blank" rel="noopener">MLX</a>.</p>
-        <div class="tl-tags"><span class="tag">PySide6</span><span class="tag">MLX</span><span class="tag">macOS</span><span class="tag">MLAI LLC</span></div>
-        <div class="tl-links"><a href="https://ahai.app" target="_blank">Website</a><a href="https://rcanand.gumroad.com/l/ahai_v1_0_0" target="_blank">Gumroad</a></div>
-      </div>
+                    <div
+                        class="pullquote"
+                        style="margin: 2.5rem 0 1rem; font-size: 1rem"
+                    >
+                        Past explorations - no longer actively developed, but
+                        they led to the work above.
+                    </div>
 
-      <div class="tl-item">
-        <span class="tl-year">2024</span>
-        <h3>Haixu - AI Educational Comics</h3>
-        <p>LLM-based pipeline to create educational visual guides from text. Human-AI collaboration on content creation. 68+ comics published on Gumroad across science, history, culture, philosophy, technology. 9 books on Amazon Kindle (author: R. C. Anand). 15 case studies documented on Hashnode.</p>
-        <div class="tl-tags"><span class="tag">Python</span><span class="tag">LLM</span><span class="tag">MLAI LLC</span><span class="tag">Gumroad</span><span class="tag">Kindle</span></div>
-        <div class="tl-links">
-          <a href="https://rcanand.gumroad.com" target="_blank">Gumroad Store</a>
-          <a href="https://www.amazon.com/stores/R.-C.-Anand/author/B0DNY6PYPW" target="_blank">Kindle</a>
-          <a href="https://rcanand.hashnode.dev/" target="_blank">Case Studies</a>
-        </div>
-      </div>
+                    <div class="tl-item">
+                        <span class="tl-year">2020</span>
+                        <h3>Ganglion - News Aggregator</h3>
+                        <p>
+                            Personalized, multi-source RSS aggregation giving
+                            readers control over their information diet.
+                        </p>
+                        <div class="tl-tags">
+                            <span class="tag">Web</span
+                            ><span class="tag">RSS</span
+                            ><span class="tag">Past</span>
+                        </div>
+                    </div>
 
-      <div class="pullquote" style="margin: 2.5rem 0 1rem; font-size: 1rem;">
-        Past explorations - no longer actively developed, but they led to the work above.
-      </div>
+                    <div class="tl-item">
+                        <span class="tl-year">2015</span>
+                        <h3>Meon - No-Code Web Platform</h3>
+                        <p>
+                            Build and host web apps with no code. Predated the
+                            current no-code wave by years. 25 product
+                            demo/tutorial videos on YouTube.
+                        </p>
+                        <div class="tl-tags">
+                            <span class="tag">Web</span
+                            ><span class="tag">No-Code</span
+                            ><span class="tag">Past</span>
+                        </div>
+                        <div class="tl-links">
+                            <a
+                                href="https://www.youtube.com/watch?v=J86s9a1RUQo"
+                                target="_blank"
+                                >YouTube Demos</a
+                            >
+                        </div>
+                    </div>
 
-      <div class="tl-item">
-        <span class="tl-year">2020</span>
-        <h3>Ganglion - News Aggregator</h3>
-        <p>Personalized, multi-source RSS aggregation giving readers control over their information diet.</p>
-        <div class="tl-tags"><span class="tag">Web</span><span class="tag">RSS</span><span class="tag">Past</span></div>
-      </div>
+                    <div class="tl-item">
+                        <span class="tl-year">Earlier</span>
+                        <h3>iOS Game Suite - 7 Educational Games</h3>
+                        <p>
+                            Sumurai &amp; Sumurai Pro (math puzzles), Smart Run
+                            (running quiz), Mathlon (math runner), Matchon, Pop
+                            Rage, Exy. Built with
+                            <a
+                                href="https://solar2d.com/"
+                                target="_blank"
+                                rel="noopener"
+                                >Corona SDK</a
+                            >
+                            for iOS App Store. 30K+ downloads. "Highly
+                            appreciated by middle school teachers in the US."
+                        </p>
+                        <div class="tl-tags">
+                            <span class="tag">iOS</span
+                            ><span class="tag">Corona SDK</span
+                            ><span class="tag">Education</span
+                            ><span class="tag">Past</span>
+                        </div>
+                        <div class="tl-links">
+                            <a
+                                href="https://www.youtube.com/watch?v=GY4slXiOiDo"
+                                target="_blank"
+                                >Sumurai Pro Video</a
+                            >
+                        </div>
+                    </div>
 
-      <div class="tl-item">
-        <span class="tl-year">2015</span>
-        <h3>Meon - No-Code Web Platform</h3>
-        <p>Build and host web apps with no code. Predated the current no-code wave by years. 25 product demo/tutorial videos on YouTube.</p>
-        <div class="tl-tags"><span class="tag">Web</span><span class="tag">No-Code</span><span class="tag">Past</span></div>
-        <div class="tl-links"><a href="https://www.youtube.com/watch?v=J86s9a1RUQo" target="_blank">YouTube Demos</a></div>
-      </div>
+                    <div class="tl-item">
+                        <span class="tl-year">Earlier</span>
+                        <h3>Pikodo, Thouwords, Deeppage, Saynomo</h3>
+                        <p>
+                            <strong>Pikodo:</strong> Educational comics from
+                            Wikipedia - the original vision that later evolved
+                            into Haixu with AI.
+                            <strong>Thouwords:</strong> Visual layer over the
+                            textual web with a knowledge graph ("a picture is
+                            worth a thousand words").
+                            <strong>Deeppage:</strong> Multimodal Wikipedia
+                            navigation. <strong>Saynomo:</strong> Where it
+                            started - personalized educational content across
+                            modalities.
+                        </p>
+                        <div class="tl-tags">
+                            <span class="tag">Web</span
+                            ><span class="tag">Knowledge Graph</span
+                            ><span class="tag">Education</span
+                            ><span class="tag">Past</span>
+                        </div>
+                    </div>
+                </div>
 
-      <div class="tl-item">
-        <span class="tl-year">Earlier</span>
-        <h3>iOS Game Suite - 7 Educational Games</h3>
-        <p>Sumurai &amp; Sumurai Pro (math puzzles), Smart Run (running quiz), Mathlon (math runner), Matchon, Pop Rage, Exy. Built with <a href="https://solar2d.com/" target="_blank" rel="noopener">Corona SDK</a> for iOS App Store. 30K+ downloads. "Highly appreciated by middle school teachers in the US." - Toptal.</p>
-        <div class="tl-tags"><span class="tag">iOS</span><span class="tag">Corona SDK</span><span class="tag">Education</span><span class="tag">Past</span></div>
-        <div class="tl-links"><a href="https://www.youtube.com/watch?v=GY4slXiOiDo" target="_blank">Sumurai Pro Video</a></div>
-      </div>
+                <div class="pullquote" style="margin-top: 3rem">
+                    Ongoing AI experiments across 170+ private repositories on
+                    <a href="https://github.com/rcanand">GitHub</a>.
+                </div>
+            </div>
+        </section>
 
-      <div class="tl-item">
-        <span class="tl-year">Earlier</span>
-        <h3>Pikodo, Thouwords, Deeppage, Saynomo</h3>
-        <p><strong>Pikodo:</strong> Educational comics from Wikipedia - the original vision that later evolved into Haixu with AI. <strong>Thouwords:</strong> Visual layer over the textual web with a knowledge graph ("a picture is worth a thousand words"). <strong>Deeppage:</strong> Multimodal Wikipedia navigation. <strong>Saynomo:</strong> Where it started - personalized educational content across modalities.</p>
-        <div class="tl-tags"><span class="tag">Web</span><span class="tag">Knowledge Graph</span><span class="tag">Education</span><span class="tag">Past</span></div>
-      </div>
-
-    </div>
-
-    <div class="pullquote" style="margin-top: 3rem;">
-      Ongoing AI experiments across 170+ private repositories on <a href="https://github.com/rcanand">GitHub</a>.
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <div class="foot-links">
-      <a href="https://github.com/rcanand">GitHub</a>
-      <a href="https://rcanand.gumroad.com">Gumroad</a>
-      <a href="https://www.amazon.com/stores/R.-C.-Anand/author/B0DNY6PYPW">Kindle</a>
-      <a href="https://mlaillc.github.io">MLAI LLC</a>
-    </div>
-    <p>Anand C Ramanathan &middot; Bellevue, WA</p>
-  </div>
-</footer>
-
-</body>
+        <footer>
+            <div class="container">
+                <div class="foot-links">
+                    <a href="https://github.com/rcanand">GitHub</a>
+                    <a href="https://rcanand.gumroad.com">Gumroad</a>
+                    <a
+                        href="https://www.amazon.com/stores/R.-C.-Anand/author/B0DNY6PYPW"
+                        >Kindle</a
+                    >
+                    <a href="https://mlaillc.github.io">MLAI LLC</a>
+                </div>
+                <p>Anand C Ramanathan &middot; Bellevue, WA</p>
+            </div>
+        </footer>
+    </body>
 </html>

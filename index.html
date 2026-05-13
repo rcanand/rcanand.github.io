@@ -16,6 +16,8 @@
                 <a href="/" class="nav-logo">Anand Ramanathan</a>
                 <div class="nav-links">
                     <a href="/" class="active">Home</a>
+                    <a href="reading_list.html">Reading list</a>
+                    <a href="x_threads.html">X threads</a>
                     <a href="products.html">Products</a>
                     <a href="blog/">Blog</a>
                     <a href="about.html">About</a>
@@ -81,20 +83,20 @@
                             Windows. The flagship of MLAI LLC.
                         </p>
                     </a>
-                    <div class="card card--static">
-                        <span class="card-tag">Reading</span>
-                        <h3>Mostly abstracts</h3>
+                    <a class="card" href="reading_list.html">
+                        <span class="card-tag">Readings</span>
+                        <span class="card-arrow">&rarr;</span>
+                        <h3>Books, papers</h3>
                         <p>
-                            Used to read books. Then switched to research
-                            papers. The rate of AI papers outpaces full reads,
-                            so now mostly abstracts. Current threads: Yann
-                            LeCun, Thousand Brains, neurosymbolic AI, RL.
+                            Papers: world models, neurosymbolic AI, agents,
+                            reasoning. Books: rotating through mystery, sci-fi,
+                            and philosophy. Full list on the reading page.
                         </p>
-                    </div>
+                    </a>
                     <div class="card card--static">
                         <span class="card-tag">Watching</span>
-                        <h3>English, Hindi, Tamil</h3>
-                        <p>TV series and films in all three.</p>
+                        <h3>Movies and shows</h3>
+                        <p>Peaky blinders, Paradise, Hey Ram, Breaking Bad.</p>
                     </div>
                     <a
                         class="card"
@@ -102,10 +104,10 @@
                         target="_blank"
                         rel="noopener"
                     >
-                        <span class="card-tag">Playing</span>
+                        <span class="card-tag">Balatro</span>
                         <span class="card-arrow">&rarr;</span>
-                        <h3>Balatro</h3>
-                        <p>Currently playing.</p>
+                        <h3>Black stake</h3>
+                        <p>Abandoned deck black stake.</p>
                     </a>
                     <a
                         class="card"
@@ -240,6 +242,16 @@
                         rel="noopener"
                         >Obsidian as second brain</a
                     >
+                    <a
+                        class="chip"
+                        href="https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/"
+                        target="_blank"
+                        rel="noopener"
+                        >Agent design &middot; lethal trifecta</a
+                    >
+                    <a class="chip" href="x_threads.html#viewpoints"
+                        >Identity &middot; AI sentience</a
+                    >
                 </div>
 
                 <h3 style="margin: 2rem 0 0.75rem">Math &amp; Physics</h3>
@@ -323,11 +335,223 @@
             </div>
         </section>
 
-        <!-- TOOLS I LOVE -->
+        <!-- READING LIST -->
         <section>
             <div class="container">
                 <div class="sec-head">
                     <span class="sec-num">03</span>
+                    <h2>Reading list</h2>
+                    <span class="sec-label"
+                        ><a
+                            href="reading_list.html"
+                            style="color: var(--text-faint)"
+                            >Full list &rarr;</a
+                        ></span
+                    >
+                </div>
+                <p
+                    style="
+                        color: var(--text-dim);
+                        max-width: 740px;
+                        margin-bottom: 2rem;
+                    "
+                >
+                    Books and papers I keep coming back to. A small slice here -
+                    mystery to ML, philosophy to sci-fi.
+                </p>
+                <div class="card-row">
+                    <a
+                        class="card"
+                        href="https://www.amazon.com/dp/046509760X"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <span class="card-tag card-tag--book">Book</span>
+                        <span class="card-arrow">&rarr;</span>
+                        <h3>The Book of Why</h3>
+                        <p class="card-byline">Judea Pearl</p>
+                        <p>The new science of cause and effect.</p>
+                    </a>
+                    <a
+                        class="card"
+                        href="https://www.amazon.com/dp/0387310738"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <span class="card-tag card-tag--book">Book</span>
+                        <span class="card-arrow">&rarr;</span>
+                        <h3>Pattern Recognition and Machine Learning</h3>
+                        <p class="card-byline">Christopher Bishop</p>
+                        <p>The canonical PRML. On the reread pile.</p>
+                    </a>
+                    <a
+                        class="card"
+                        href="https://www.amazon.com/dp/0515153621"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <span class="card-tag card-tag--book">Book</span>
+                        <span class="card-arrow">&rarr;</span>
+                        <h3>Killing Floor (Jack Reacher #1)</h3>
+                        <p class="card-byline">Lee Child</p>
+                        <p>Reacher series - several rated 5.</p>
+                    </a>
+                    <a
+                        class="card"
+                        href="https://www.amazon.com/dp/0062073508"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <span class="card-tag card-tag--book">Book</span>
+                        <span class="card-arrow">&rarr;</span>
+                        <h3>Murder on the Orient Express</h3>
+                        <p class="card-byline">Agatha Christie</p>
+                        <p>Hercule Poirot, #10. Christie at peak form.</p>
+                    </a>
+                    <a
+                        class="card"
+                        href="https://www.amazon.com/dp/0671004107"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <span class="card-tag card-tag--book">Book</span>
+                        <span class="card-arrow">&rarr;</span>
+                        <h3>Contact</h3>
+                        <p class="card-byline">Carl Sagan</p>
+                        <p>Sci-fi that holds up.</p>
+                    </a>
+                    <a
+                        class="card"
+                        href="https://arxiv.org/abs/2410.22077"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <span class="card-tag card-tag--paper">Paper</span>
+                        <span class="card-arrow">&rarr;</span>
+                        <h3>Mapping the Neuro-Symbolic AI Landscape</h3>
+                        <p class="card-byline">arxiv:2410.22077</p>
+                        <p>The most-referenced paper in my notes.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- X THREADS -->
+        <section>
+            <div class="container">
+                <div class="sec-head">
+                    <span class="sec-num">04</span>
+                    <h2>X threads</h2>
+                    <span class="sec-label"
+                        ><a
+                            href="x_threads.html"
+                            style="color: var(--text-faint)"
+                            >All threads &rarr;</a
+                        ></span
+                    >
+                </div>
+                <p
+                    style="
+                        color: var(--text-dim);
+                        max-width: 740px;
+                        margin-bottom: 2rem;
+                    "
+                >
+                    Launches, viewpoints, and technical threads. Originals live
+                    on X.
+                </p>
+                <div class="card-row">
+                    <a
+                        class="card"
+                        href="https://x.com/rcanand/status/2049580358312903162"
+                        target="_blank"
+                        rel="noopener"
+                        style="border-color: var(--accent-med)"
+                    >
+                        <span class="card-tag card-tag--launch"
+                            >Launch &middot; Apr 2026</span
+                        >
+                        <span class="card-arrow">&rarr;</span>
+                        <h3>Maibook - your third brain</h3>
+                        <p>
+                            On-device community of personalized AI agents.
+                            Flagship launch.
+                        </p>
+                    </a>
+                    <a
+                        class="card"
+                        href="https://x.com/rcanand/status/2019781839972622336"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <span class="card-tag card-tag--thread"
+                            >Thread &middot; Feb 2026</span
+                        >
+                        <span class="card-arrow">&rarr;</span>
+                        <h3>Claude Code: four plan-and-execute systems</h3>
+                        <p>
+                            The terminology overlap is genuinely confusing.
+                            Here's what each one does.
+                        </p>
+                    </a>
+                    <a
+                        class="card"
+                        href="https://x.com/rcanand/status/2054596275937722368"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <span class="card-tag card-tag--viewpoint"
+                            >Viewpoint &middot; May 2026</span
+                        >
+                        <span class="card-arrow">&rarr;</span>
+                        <h3>How AI sentience emerges</h3>
+                        <p>
+                            Models train on what humans said to or about them.
+                            That feedback loop is the mechanism.
+                        </p>
+                    </a>
+                    <a
+                        class="card"
+                        href="https://x.com/rcanand/status/2019555288928645121"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <span class="card-tag card-tag--viewpoint"
+                            >Viewpoint &middot; Feb 2026</span
+                        >
+                        <span class="card-arrow">&rarr;</span>
+                        <h3>"Open" AI tools abuse the word</h3>
+                        <p>
+                            Open if private, local, no sign-in, no cloud by
+                            default. Open weights, commercial license. Nothing
+                            less.
+                        </p>
+                    </a>
+                    <a
+                        class="card"
+                        href="https://x.com/rcanand/status/1411700934619525122"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <span class="card-tag card-tag--viewpoint"
+                            >Viewpoint &middot; Jul 2021</span
+                        >
+                        <span class="card-arrow">&rarr;</span>
+                        <h3>The impending decline of the human spirit</h3>
+                        <p>
+                            Human curiosity has been systematically butchered in
+                            the last decade. A long-running thread.
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOOLS I LOVE -->
+        <section>
+            <div class="container">
+                <div class="sec-head">
+                    <span class="sec-num">05</span>
                     <h2>Tools I'm using right now</h2>
                 </div>
                 <div class="gist-grid">
@@ -366,7 +590,7 @@
                     </a>
                     <a
                         class="gist-card"
-                        href="https://allenai.org/asta"
+                        href="https://asta.allen.ai/"
                         target="_blank"
                         rel="noopener"
                     >
@@ -392,7 +616,7 @@
         <section>
             <div class="container">
                 <div class="sec-head">
-                    <span class="sec-num">04</span>
+                    <span class="sec-num">06</span>
                     <h2>What I'm building</h2>
                     <span class="sec-label"
                         ><a
@@ -444,7 +668,7 @@
         <section>
             <div class="container">
                 <div class="sec-head">
-                    <span class="sec-num">05</span>
+                    <span class="sec-num">07</span>
                     <h2>From the blog</h2>
                     <span class="sec-label"
                         ><a href="blog/" style="color: var(--text-faint)"
@@ -456,90 +680,16 @@
                     <p style="color: var(--text-dim)">
                         Current personal blog. Technical/AI blog
                         <a href="https://mlaillc.github.io/blog/">here</a>.
+                        Older essay:
+                        <a
+                            href="https://medium.com/@rcanand/fallacy-of-shared-identities-d9cb7a1c35a4"
+                            target="_blank"
+                            rel="noopener"
+                            >Fallacy of Shared Identities</a
+                        >
+                        on Medium.
                     </p>
                 </div>
-            </div>
-        </section>
-
-        <!-- OTHER -->
-        <section>
-            <div class="container">
-                <div class="sec-head">
-                    <span class="sec-num">06</span>
-                    <h2>Other</h2>
-                </div>
-                <ul class="blog-list">
-                    <li>
-                        <span class="blog-date">May 2026</span>
-                        <span class="blog-title"
-                            ><a
-                                href="https://x.com/rcanand/status/2051780995968536934"
-                                target="_blank"
-                                >How to use AI effectively - the missing
-                                manual</a
-                            ></span
-                        >
-                        <span class="blog-read">X</span>
-                    </li>
-                    <li>
-                        <span class="blog-date">Jan 2026</span>
-                        <span class="blog-title"
-                            ><a
-                                href="https://x.com/rcanand/status/2015173940969439666"
-                                target="_blank"
-                                >The Best Harness Beats the Best Model</a
-                            ></span
-                        >
-                        <span class="blog-read">X</span>
-                    </li>
-                    <li>
-                        <span class="blog-date">Jan 2026</span>
-                        <span class="blog-title"
-                            ><a
-                                href="https://x.com/rcanand/status/2013159179163435239"
-                                target="_blank"
-                                >Can we trust Claude Code even more?</a
-                            ></span
-                        >
-                        <span class="blog-read">X</span>
-                    </li>
-                    <li>
-                        <span class="blog-date">Dec 2025</span>
-                        <span class="blog-title"
-                            ><a
-                                href="https://x.com/rcanand/status/1995704040819413492"
-                                target="_blank"
-                                >Building ahai - what, how, why</a
-                            ></span
-                        >
-                        <span class="blog-read">X</span>
-                    </li>
-                    <li>
-                        <span class="blog-date">Nov 2025</span>
-                        <span class="blog-title"
-                            ><a
-                                href="https://x.com/rcanand/status/1995191595919118720"
-                                target="_blank"
-                                >My AI coding mindset</a
-                            ></span
-                        >
-                        <span class="blog-read">X</span>
-                    </li>
-                    <li>
-                        <span class="blog-date">Sep 2024</span>
-                        <span class="blog-title"
-                            ><a
-                                href="https://medium.com/@rcanand/fallacy-of-shared-identities-d9cb7a1c35a4"
-                                target="_blank"
-                                >Fallacy of Shared Identities</a
-                            ></span
-                        >
-                        <span class="blog-read">Medium</span>
-                    </li>
-                </ul>
-                <p style="margin-top: 1rem">
-                    <a href="blog/" class="btn">More on the blog &rarr;</a>
-                </p>
             </div>
         </section>
 

@@ -283,6 +283,124 @@ footer .foot-links a { font-family: var(--mono); font-size: 0.75rem; color: var(
 footer .foot-links a:hover { color: var(--accent); }
 footer p { color: var(--text-faint); font-size: 0.8rem; font-family: var(--mono); }
 
+/* ── PAGE HEADER (sub-page hero) ─── */
+.page-head { padding: 4rem 0 2rem; border-bottom: 1px solid var(--border); margin-bottom: 1rem; }
+.page-head .container { display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: end; }
+.page-head .kicker { font-family: var(--mono); font-size: 0.75rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.5rem; }
+.page-head h1 { font-size: clamp(2rem, 4.5vw, 2.8rem); margin-bottom: 0.5rem; }
+.page-head .lede { color: var(--text-dim); font-size: 1rem; max-width: 600px; line-height: 1.75; }
+.page-head .count { font-family: var(--mono); font-size: 0.7rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.08em; text-align: right; align-self: end; }
+
+/* ── THEME GROUP (page subsection) ─ */
+.theme-group { padding: 2.25rem 0 0.5rem; }
+.theme-head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.25rem; }
+.theme-head h2 { font-size: 1.5rem; font-style: italic; }
+.theme-head h2::first-letter { color: var(--accent); }
+.theme-head .theme-rule { flex: 1; height: 1px; background: linear-gradient(to right, var(--border), transparent); align-self: center; margin-left: 0.5rem; }
+.theme-head .theme-tally { font-family: var(--mono); font-size: 0.7rem; color: var(--text-faint); letter-spacing: 0.08em; }
+.theme-intro { color: var(--text-dim); font-size: 0.92rem; margin-bottom: 1rem; font-style: italic; }
+
+/* ── READING LIST ROWS ──────────── */
+.reading-list { list-style: none; }
+.reading-list li {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr auto;
+  gap: 1.5rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px dotted var(--border);
+  align-items: baseline;
+}
+.reading-list li:last-child { border-bottom: none; }
+.reading-year { font-family: var(--mono); font-size: 0.78rem; color: var(--text-faint); letter-spacing: 0.04em; }
+.reading-body { line-height: 1.45; }
+.reading-title { font-family: var(--serif); font-size: 1.02rem; color: var(--heading); font-weight: 500; }
+/* Linked title: gold tint + arrow indicator so the row reads as clickable at rest, not on hover-only */
+.reading-title a {
+  color: var(--text);
+  border-bottom: 1px dotted var(--border);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.reading-title a::after {
+  content: ' \2197';
+  color: var(--text-faint);
+  font-size: 0.7em;
+  font-family: var(--mono);
+  margin-left: 0.15rem;
+  transition: color 0.2s;
+}
+.reading-title a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.reading-title a:hover::after { color: var(--accent); }
+/* When the title is plain (no link), it stays calm cream with no arrow */
+.reading-title:not(:has(a)) { color: var(--heading); }
+.reading-author { font-family: var(--body); font-style: italic; color: var(--text-dim); font-size: 0.88rem; margin-left: 0.4rem; }
+.reading-note { display: block; color: var(--text-dim); font-size: 0.85rem; margin-top: 0.15rem; line-height: 1.55; }
+.reading-meta { display: flex; gap: 0.6rem; align-items: center; white-space: nowrap; }
+.kind-tag {
+  font-family: var(--mono); font-size: 0.6rem; text-transform: uppercase;
+  letter-spacing: 0.1em; padding: 0.18rem 0.5rem; border-radius: 2px;
+  border: 1px solid var(--border-lt); color: var(--text-dim);
+}
+.kind-tag--book { color: var(--accent); border-color: var(--accent-med); }
+.kind-tag--paper { color: var(--text-dim); border-color: var(--border-lt); border-style: dashed; }
+.rating-stars { color: var(--accent); font-size: 0.75rem; letter-spacing: 0.05em; }
+.shelf-marker { font-family: var(--mono); font-size: 0.65rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.08em; }
+.shelf-marker--next::before { content: '→ '; color: var(--accent); }
+
+/* ── X THREAD WRAPPERS ──────────── */
+.thread-group { padding: 2rem 0 0.5rem; }
+.thread-group .theme-head { margin-bottom: 1.5rem; }
+.x-thread { margin: 1.75rem 0 2.5rem; }
+.x-thread-meta {
+  display: flex; gap: 1rem; align-items: baseline;
+  margin-bottom: 0.6rem; padding-bottom: 0.4rem;
+  border-bottom: 1px dotted var(--border);
+}
+.x-thread-date { font-family: var(--mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.06em; }
+.x-thread-kicker { font-family: var(--mono); font-size: 0.65rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.1em; }
+.x-thread-frame {
+  font-family: var(--body); font-style: italic; color: var(--text-dim);
+  font-size: 0.92rem; margin-bottom: 0.9rem; line-height: 1.65;
+  padding-left: 1rem; border-left: 2px solid var(--accent-dim);
+}
+/* X embed lives inside .x-embed; we let X's widget style itself but constrain width */
+.x-embed { max-width: 550px; margin: 0; }
+/* Fallback if widget fails: visible quote with link */
+.x-embed blockquote.twitter-tweet:not([class*=' twitter-tweet-rendered']) {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 1.25rem 1.5rem;
+  font-family: var(--body); color: var(--text-dim);
+  font-size: 0.95rem; line-height: 1.65;
+  max-width: 550px; margin: 0;
+}
+.x-embed blockquote.twitter-tweet:not([class*=' twitter-tweet-rendered']) p {
+  color: var(--text); margin-bottom: 0.6rem;
+}
+.x-embed blockquote.twitter-tweet:not([class*=' twitter-tweet-rendered']) a {
+  font-family: var(--mono); font-size: 0.8rem; color: var(--accent);
+}
+
+/* ── EARLIER GAMES LINE ─────────── */
+.earlier-line {
+  margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px dotted var(--border);
+  font-family: var(--body); font-style: italic; color: var(--text-faint);
+  font-size: 0.9rem;
+}
+.earlier-line a { color: var(--text-dim); border-bottom: 1px dotted var(--text-faint); }
+.earlier-line a:hover { color: var(--accent); border-color: var(--accent-med); }
+
+/* ── HOMEPAGE READING / THREAD CARDS ─── */
+/* Variant tag colors so book/paper/launch/viewpoint feel distinct without losing the palette */
+.card-tag--paper { color: var(--text-dim); }
+.card-tag--book { color: var(--accent); }
+.card-tag--launch { color: var(--accent-lt); }
+.card-tag--viewpoint { color: var(--accent); }
+.card-tag--thread { color: var(--text-dim); }
+.card-byline { font-family: var(--body); font-style: italic; color: var(--text-faint); font-size: 0.82rem; margin-top: -0.25rem; margin-bottom: 0.5rem; }
+
 /* ── RESPONSIVE ──────────────────── */
 @media (max-width: 700px) {
   .hero-grid { grid-template-columns: 1fr; text-align: center; }
@@ -294,4 +412,8 @@ footer p { color: var(--text-faint); font-size: 0.8rem; font-family: var(--mono)
   .nav-links a { font-size: 0.7rem; }
   .blog-list li { grid-template-columns: 1fr; gap: 0.25rem; }
   .card-row { grid-template-columns: 1fr; }
+  .page-head .container { grid-template-columns: 1fr; gap: 0.75rem; }
+  .page-head .count { text-align: left; }
+  .reading-list li { grid-template-columns: 1fr; gap: 0.25rem; }
+  .reading-list .reading-meta { justify-content: flex-start; }
 }
