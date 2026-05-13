@@ -28,10 +28,7 @@ function slugFromQuery() {
 function renderList(posts) {
     if (!posts || posts.length === 0) {
         postList.innerHTML = `
-            <p style="color: var(--text-dim, #888);">
-                New blog - coming soon. Drop a markdown file into
-                <code>blog/posts/&lt;slug&gt;/index.md</code>, push, and it appears here.
-            </p>`;
+            <p style="color: var(--text-dim, #888);">New blog. Coming soon.</p>`;
         if (postCount) postCount.textContent = "0 posts";
         return;
     }

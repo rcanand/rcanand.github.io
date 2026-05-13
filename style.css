@@ -173,6 +173,15 @@ section { padding: 4rem 0; }
   transition: border-color 0.3s; display: block; text-decoration: none; color: inherit;
 }
 .gist-card:hover { border-color: var(--accent); color: inherit; }
+.gist-card--static {
+  background: transparent;
+  border-style: dashed;
+  border-color: var(--border-lt);
+  cursor: default;
+}
+.gist-card--static:hover {
+  border-color: var(--border-lt);
+}
 .gist-card h4 { font-family: var(--serif); font-size: 1rem; margin-bottom: 0.4rem; color: var(--heading); }
 .gist-card p { color: var(--text-dim); font-size: 0.85rem; margin-bottom: 0.5rem; line-height: 1.6; }
 .gist-meta { font-family: var(--mono); font-size: 0.7rem; color: var(--accent); }
