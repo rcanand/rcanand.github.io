@@ -92,7 +92,7 @@ function preprocessWikilinks(md, basePath) {
     md = md.replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (_, target, display) => {
         const t = target.trim();
         const d = (display || t).trim();
-        const slug = t.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+        const slug = t.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "");
         return `[${d}](?p=${encodeURIComponent(slug)})`;
     });
     return md;

@@ -1,3 +1,16 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "slug": "older_framework",
+      "title": "Older framework - how I view things",
+      "date": "2022-08-01",
+      "tags": [
+        "philosophy",
+        "framework",
+        "older"
+      ],
+      "excerpt": "An older personal-framework essay. Leaders, followers, individuals; natural vs. artificial wants; a work-in-progress middle path. Kept here as the older snapshot; the current version is being rewritten.",
+      "path": "posts/older_framework.md"
+    }
+  ]
 }

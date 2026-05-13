@@ -60,7 +60,7 @@ def collect() -> list[dict]:
             slug = md.parent.name
         else:
             slug = md.stem
-        title = data.get("title") or slug.replace("-", " ").title()
+        title = data.get("title") or slug.replace("_", " ").replace("-", " ").title()
         date = data.get("date") or ""
         tags = data.get("tags") or []
         if isinstance(tags, str):

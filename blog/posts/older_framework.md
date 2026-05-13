@@ -1,3 +1,12 @@
+---
+title: Older framework - how I view things
+date: 2022-08-01
+tags: [philosophy, framework, older]
+excerpt: An older personal-framework essay. Leaders, followers, individuals; natural vs. artificial wants; a work-in-progress middle path. Kept here as the older snapshot; the current version is being rewritten.
+---
+
+> This is the older version of my personal framework, originally written around 2022 and pinned at the root of this site for years. Keeping it here as a snapshot. A current version is being rewritten and will land as a new post.
+
 ## How I view things
 
 The below is my model of how I think about things. Like all models, this is not perfect, and every rule has exceptions. However, the spirit of the statements, when taken together, describe how I view the world.
