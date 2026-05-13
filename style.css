@@ -182,6 +182,15 @@ section { padding: 4rem 0; }
 .gist-card--static:hover {
   border-color: var(--border-lt);
 }
+/* Linked tool/gist card: clear clickability hint */
+a.gist-card { position: relative; }
+a.gist-card::after {
+  content: '\2197';
+  position: absolute; top: 1rem; right: 1rem;
+  color: var(--text-faint); font-size: 0.9rem;
+  transition: color 0.2s;
+}
+a.gist-card:hover::after { color: var(--accent); }
 .gist-card h4 { font-family: var(--serif); font-size: 1rem; margin-bottom: 0.4rem; color: var(--heading); }
 .gist-card p { color: var(--text-dim); font-size: 0.85rem; margin-bottom: 0.5rem; line-height: 1.6; }
 .gist-meta { font-family: var(--mono); font-size: 0.7rem; color: var(--accent); }
@@ -206,11 +215,29 @@ section { padding: 4rem 0; }
   color: var(--text-dim); background: var(--bg-card);
   border: 1px solid var(--border); padding: 0.35rem 0.75rem;
   border-radius: 999px; line-height: 1.4;
-  transition: border-color 0.2s, color 0.2s;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  display: inline-block;
 }
 .chip:hover { border-color: var(--accent-med); color: var(--text); }
-.chip a { color: inherit; }
-.chip a:hover { color: var(--accent); }
+
+/* Linked chip: clearly clickable */
+a.chip {
+  color: var(--accent);
+  border-color: var(--accent-med);
+  text-decoration: none;
+}
+a.chip::after {
+  content: ' \2197';
+  font-size: 0.75em;
+  opacity: 0.65;
+  margin-left: 0.15rem;
+}
+a.chip:hover {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+  color: var(--accent-lt);
+}
+a.chip:hover::after { opacity: 1; }
 
 /* ── PULLQUOTE ───────────────────── */
 .pullquote {
