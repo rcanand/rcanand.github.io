@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Blog - Anand Ramanathan</title>
+        <link rel="stylesheet" href="../style.css" />
+        <link rel="stylesheet" href="blog.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/highlight.js@11.10.0/styles/atom-one-dark.min.css"
+        />
+    </head>
+    <body>
+        <nav>
+            <div class="container">
+                <a href="/" class="nav-logo">Anand Ramanathan</a>
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="../products.html">Products</a>
+                    <a href="./" class="active">Blog</a>
+                    <a href="../about.html">About</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- LIST VIEW -->
+        <main id="list-view">
+            <header class="hero" style="padding-bottom: 2rem">
+                <div class="container">
+                    <p class="hero-label">Blog</p>
+                    <h1>Notes from the long-running threads.</h1>
+                    <p class="hero-sub">
+                        Personal blog - non-tech topics mostly. Books,
+                        films, games, mindfulness, math/physics
+                        curiosities, philosophy. The AI-focused writing
+                        lives at
+                        <a href="https://mlaillc.github.io/blog/"
+                            >mlaillc.github.io/blog</a
+                        >.
+                    </p>
+                </div>
+            </header>
+
+            <section>
+                <div class="container">
+                    <div class="sec-head">
+                        <span class="sec-num">01</span>
+                        <h2>Posts</h2>
+                        <span class="sec-label" id="post-count"></span>
+                    </div>
+                    <div id="post-list">
+                        <p style="color: var(--text-dim)">Loading posts...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WRITTEN ELSEWHERE - flat, most-recent-first, source as chip -->
+            <section>
+                <div class="container">
+                    <div class="sec-head">
+                        <span class="sec-num">02</span>
+                        <h2>Written elsewhere</h2>
+                        <span class="sec-label">Most recent first</span>
+                    </div>
+                    <ul class="blog-list">
+                        <li>
+                            <span class="blog-date">May 2026</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://x.com/rcanand/status/2051780995968536934"
+                                    target="_blank"
+                                    >How to use AI effectively - the missing
+                                    manual</a
+                                ></span
+                            >
+                            <span class="blog-read">X</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Jan 2026</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://x.com/rcanand/status/2015173940969439666"
+                                    target="_blank"
+                                    >The Best Harness Beats the Best Model</a
+                                ></span
+                            >
+                            <span class="blog-read">X</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Jan 2026</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://x.com/rcanand/status/2013159179163435239"
+                                    target="_blank"
+                                    >Can we trust Claude Code even more?</a
+                                ></span
+                            >
+                            <span class="blog-read">X</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Jan 2026</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://news.ycombinator.com/item?id=46545981"
+                                    target="_blank"
+                                    >Show HN: Visualize full Claude Code CLI
+                                    sessions in a rich UI</a
+                                ></span
+                            >
+                            <span class="blog-read">HN</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Dec 2025</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://x.com/rcanand/status/1995704040819413492"
+                                    target="_blank"
+                                    >Building ahai - what, how, why</a
+                                ></span
+                            >
+                            <span class="blog-read">X</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Dec 2025</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://news.ycombinator.com/item?id=46120991"
+                                    target="_blank"
+                                    >Show HN: ahai - find your ideas scattered
+                                    across files</a
+                                ></span
+                            >
+                            <span class="blog-read">HN</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Nov 2025</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://x.com/rcanand/status/1995191595919118720"
+                                    target="_blank"
+                                    >My AI coding mindset</a
+                                ></span
+                            >
+                            <span class="blog-read">X</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Nov 2025</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://x.com/rcanand/status/1991949404044136522"
+                                    target="_blank"
+                                    >IRS deploys AI agents</a
+                                ></span
+                            >
+                            <span class="blog-read">X</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Jul 2025</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://x.com/rcanand/status/1943725042371899615"
+                                    target="_blank"
+                                    >The LLM Paradox</a
+                                ></span
+                            >
+                            <span class="blog-read">X</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Jun 2025</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://x.com/rcanand/status/1938988672868852001"
+                                    target="_blank"
+                                    >LLM Filter Bubble</a
+                                ></span
+                            >
+                            <span class="blog-read">X</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Mar 2025</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://rcanand.bearblog.dev/my-goto-web-chat-ai-agents-as-of-march-24-2025/"
+                                    target="_blank"
+                                    >My Goto Web Chat AI Agents</a
+                                ></span
+                            >
+                            <span class="blog-read">Bear</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Mar 2025</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://rcanand.bearblog.dev/an-ode-to-claude-in-cursor/"
+                                    target="_blank"
+                                    >An Ode to Claude in Cursor</a
+                                ></span
+                            >
+                            <span class="blog-read">Bear</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Mar 2025</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://rcanand.bearblog.dev/a-cheap-way-to-compare-llm-knowledge/"
+                                    target="_blank"
+                                    >A Cheap Way to Compare LLM Knowledge</a
+                                ></span
+                            >
+                            <span class="blog-read">Bear</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Mar 2025</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://rcanand.bearblog.dev/llm-context-length-long-or-short/"
+                                    target="_blank"
+                                    >Long Conversations with LLMs via
+                                    Language-as-Code</a
+                                ></span
+                            >
+                            <span class="blog-read">Bear</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Feb 2025</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://rcanand.hashnode.dev/list-of-web-chat-ai-models-as-of-feb-17-2025"
+                                    target="_blank"
+                                    >List of Web Chat AI Models</a
+                                ></span
+                            >
+                            <span class="blog-read">Hashnode</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Jan 2025</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://rcanand.hashnode.dev/a-penny-for-deepseek-r1s-thoughts"
+                                    target="_blank"
+                                    >A Penny for DeepSeek-R1's Thoughts</a
+                                ></span
+                            >
+                            <span class="blog-read">Hashnode</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Jan 2025</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://rcanand.hashnode.dev/evaluating-local-models-with-custom-datasets"
+                                    target="_blank"
+                                    >Evaluating Local Models with Custom
+                                    Datasets</a
+                                ></span
+                            >
+                            <span class="blog-read">Hashnode</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Jan 2025</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://rcanand.hashnode.dev/deepseek-r1-thinks-in-cursor"
+                                    target="_blank"
+                                    >DeepSeek-R1 Thinks in Cursor</a
+                                ></span
+                            >
+                            <span class="blog-read">Hashnode</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Jan 2025</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://rcanand.hashnode.dev/ai-disruptors"
+                                    target="_blank"
+                                    >AI Disruptors</a
+                                ></span
+                            >
+                            <span class="blog-read">Hashnode</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Jan 2025</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://medium.com/@rcanand/evaluating-software-by-its-config-cf3bfa9a7eb4"
+                                    target="_blank"
+                                    >Evaluating Software by its Config</a
+                                ></span
+                            >
+                            <span class="blog-read">Medium</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Dec 2024</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://rcanand.hashnode.dev/state-of-ai-end-of-2024-a-brain-dump-wip"
+                                    target="_blank"
+                                    >State of AI End of 2024: A Brain Dump</a
+                                ></span
+                            >
+                            <span class="blog-read">Hashnode</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Sep 2024</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://medium.com/@rcanand/rethinking-structured-data-in-a-world-with-ai-92b6e2ec87f0"
+                                    target="_blank"
+                                    >Rethinking Structured Data in a World with
+                                    AI</a
+                                ></span
+                            >
+                            <span class="blog-read">Medium</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Sep 2024</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://medium.com/@rcanand/switch-to-chatgpt-o1-524fcfafd6f9"
+                                    target="_blank"
+                                    >Switch to ChatGPT o1</a
+                                ></span
+                            >
+                            <span class="blog-read">Medium</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Sep 2024</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://medium.com/@rcanand/using-chat-ai-a8c907756bfe"
+                                    target="_blank"
+                                    >Using Chat AI</a
+                                ></span
+                            >
+                            <span class="blog-read">Medium</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Sep 2024</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://medium.com/@rcanand/fallacy-of-shared-identities-d9cb7a1c35a4"
+                                    target="_blank"
+                                    >Fallacy of Shared Identities</a
+                                ></span
+                            >
+                            <span class="blog-read">Medium</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Sep 2024</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://rcanand.hashnode.dev/key-components-of-my-ai-and-technology-stack"
+                                    target="_blank"
+                                    >Key Components of My AI and Technology
+                                    Stack</a
+                                ></span
+                            >
+                            <span class="blog-read">Hashnode</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Aug 2024</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://rcanand.hashnode.dev/what-could-reduce-current-ai-demand-for-gpus"
+                                    target="_blank"
+                                    >What Could Reduce Current AI Demand for
+                                    GPUs</a
+                                ></span
+                            >
+                            <span class="blog-read">Hashnode</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Jul 2024</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://rcanand.hashnode.dev/ai-assisted-software-development"
+                                    target="_blank"
+                                    >AI Assisted Software Development</a
+                                ></span
+                            >
+                            <span class="blog-read">Hashnode</span>
+                        </li>
+                        <li>
+                            <span class="blog-date">Jun 2024</span>
+                            <span class="blog-title"
+                                ><a
+                                    href="https://rcanand.hashnode.dev/managing-ai-anxiety"
+                                    target="_blank"
+                                    >Managing AI Anxiety</a
+                                ></span
+                            >
+                            <span class="blog-read">Hashnode</span>
+                        </li>
+                    </ul>
+
+                    <div
+                        style="
+                            margin-top: 1.5rem;
+                            display: flex;
+                            gap: 1rem;
+                            flex-wrap: wrap;
+                        "
+                    >
+                        <a
+                            href="https://x.com/rcanand/articles"
+                            class="btn"
+                            target="_blank"
+                            >Articles on X</a
+                        >
+                        <a
+                            href="https://rcanand.hashnode.dev/"
+                            class="btn"
+                            target="_blank"
+                            >Hashnode</a
+                        >
+                        <a
+                            href="https://medium.com/@rcanand"
+                            class="btn"
+                            target="_blank"
+                            >Medium</a
+                        >
+                        <a
+                            href="https://rcanand.bearblog.dev"
+                            class="btn"
+                            target="_blank"
+                            >Bear Blog</a
+                        >
+                        <a
+                            href="https://www.blogger.com/profile/06515123598791544192"
+                            class="btn"
+                            target="_blank"
+                            >Blogger</a
+                        >
+                        <a
+                            href="https://news.ycombinator.com/user?id=rcanand2025"
+                            class="btn"
+                            target="_blank"
+                            >Hacker News</a
+                        >
+                        <a
+                            href="https://www.quora.com/profile/Anand-C-Ramanathan"
+                            class="btn"
+                            target="_blank"
+                            >Quora (1M+ views)</a
+                        >
+                    </div>
+                </div>
+            </section>
+
+            <!-- PUBLIC GISTS -->
+            <section>
+                <div class="container">
+                    <div class="sec-head">
+                        <span class="sec-num">03</span>
+                        <h2>Public tools &amp; gists</h2>
+                    </div>
+                    <div class="gist-grid">
+                        <a
+                            href="https://gist.github.com/rcanand/7023b76dde12cbb8f37deccfb122d49d"
+                            class="gist-card"
+                            target="_blank"
+                        >
+                            <h4>LLM &amp; Agentic Apps</h4>
+                            <p>
+                                Curated list of LLM and agentic applications
+                                across categories.
+                            </p>
+                            <span class="gist-meta">2026 &middot; Reference</span>
+                        </a>
+                        <a
+                            href="https://gist.github.com/rcanand/5a7e124acc2ac241cba4a629cc1b1b80"
+                            class="gist-card"
+                            target="_blank"
+                        >
+                            <h4>JSON Viewer</h4>
+                            <p>
+                                Standalone HTML to view, navigate, and search
+                                any JSON file.
+                            </p>
+                            <span class="gist-meta">2025 &middot; Tool</span>
+                        </a>
+                        <a
+                            href="https://gist.github.com/rcanand/cc0a7dc87839ac1c23a0e687c779637c"
+                            class="gist-card"
+                            target="_blank"
+                        >
+                            <h4>CSV Viewer</h4>
+                            <p>
+                                Standalone HTML to view local CSVs in a table
+                                with sort and filter.
+                            </p>
+                            <span class="gist-meta">2025 &middot; Tool</span>
+                        </a>
+                        <a
+                            href="https://gist.github.com/rcanand/e647e0142cff6e817deafe5eed73b2fb"
+                            class="gist-card"
+                            target="_blank"
+                        >
+                            <h4>Report Viewer</h4>
+                            <p>Asta report viewer for structured reports.</p>
+                            <span class="gist-meta">2026 &middot; Tool</span>
+                        </a>
+                        <a
+                            href="https://gist.github.com/rcanand/07a1cb9694475bbf267647e59f8f3488"
+                            class="gist-card"
+                            target="_blank"
+                        >
+                            <h4>Markdown Dark Theme CSS</h4>
+                            <p>
+                                Clean dark theme CSS for rendering markdown
+                                content.
+                            </p>
+                            <span class="gist-meta">2026 &middot; CSS</span>
+                        </a>
+                        <a
+                            href="https://gist.github.com/rcanand/0471ea93c05e531e699517331d55b2f1"
+                            class="gist-card"
+                            target="_blank"
+                        >
+                            <h4>Cursor Terminal Shortcut</h4>
+                            <p>
+                                Workaround for Cursor IDE hijacking Cmd-K -
+                                clear terminal with custom shortcut.
+                            </p>
+                            <span class="gist-meta">2025 &middot; Tip</span>
+                        </a>
+                    </div>
+                    <p
+                        style="
+                            margin-top: 1rem;
+                            color: var(--text-dim);
+                            font-size: 0.9rem;
+                        "
+                    >
+                        170+ repos on
+                        <a href="https://github.com/rcanand">GitHub</a> (mostly
+                        private during active development).
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <!-- READER VIEW (single post) -->
+        <main id="reader-view" style="display: none">
+            <div class="container">
+                <p style="margin: 2rem 0 1rem">
+                    <a href="./" class="btn">&larr; All posts</a>
+                </p>
+                <article id="post-content" class="prose"></article>
+                <p style="margin: 3rem 0 1rem">
+                    <a href="./" class="btn">&larr; All posts</a>
+                </p>
+            </div>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div class="foot-links">
+                    <a href="https://github.com/rcanand">GitHub</a>
+                    <a href="https://rcanand.hashnode.dev/">Hashnode</a>
+                    <a href="https://medium.com/@rcanand">Medium</a>
+                    <a href="https://x.com/rcanand">X</a>
+                    <a href="https://mlaillc.github.io">MLAI LLC</a>
+                </div>
+                <p>Anand C Ramanathan &middot; Bellevue, WA</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/marked@13.0.3/marked.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/marked-highlight@2.1.4/lib/index.umd.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.10.0/lib/highlight.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+        <script src="blog.js"></script>
+    </body>
+</html>

@@ -114,6 +114,19 @@ section { padding: 4rem 0; }
   display: block; text-decoration: none; color: inherit;
 }
 .card:hover { border-color: var(--accent); transform: translateY(-3px); color: inherit; }
+
+/* Static info cards: dashed border, transparent fill, no hover motion. Distinguishes "note" from "tile" at rest. */
+.card--static {
+  background: transparent;
+  border-style: dashed;
+  border-color: var(--border-lt);
+  cursor: default;
+}
+.card--static:hover {
+  border-color: var(--border-lt);
+  transform: none;
+}
+.card--static .card-arrow { display: none; }
 .card-tag {
   font-family: var(--mono); font-size: 0.65rem; text-transform: uppercase;
   letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.75rem;
@@ -176,6 +189,19 @@ section { padding: 4rem 0; }
 .blog-title a { color: var(--heading); }
 .blog-title a:hover { color: var(--accent); }
 .blog-read { font-family: var(--mono); font-size: 0.7rem; color: var(--text-dim); white-space: nowrap; }
+
+/* ── CHIPS (interest tags) ─────────── */
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
+.chip {
+  font-family: var(--mono); font-size: 0.75rem;
+  color: var(--text-dim); background: var(--bg-card);
+  border: 1px solid var(--border); padding: 0.35rem 0.75rem;
+  border-radius: 999px; line-height: 1.4;
+  transition: border-color 0.2s, color 0.2s;
+}
+.chip:hover { border-color: var(--accent-med); color: var(--text); }
+.chip a { color: inherit; }
+.chip a:hover { color: var(--accent); }
 
 /* ── PULLQUOTE ───────────────────── */
 .pullquote {
