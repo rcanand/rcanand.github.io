@@ -1,21 +1,19 @@
 {
   "posts": [
     {
-      "slug": "older_framework",
-      "title": "Older framework - how I view things",
-      "date": "2022-08-01",
+      "slug": "framework",
+      "title": "Personal framework",
+      "date": "2026-05-14",
       "tags": [
         "philosophy",
-        "framework",
-        "older"
+        "framework"
       ],
-      "excerpt": "An older personal-framework essay. Leaders, followers, individuals; natural vs. artificial wants; a work-in-progress middle path. Kept here as the older snapshot; the current version is being rewritten.",
-      "path": "posts/older_framework.md"
+      "excerpt": "By choosing society over the wild, we agreed to compromise. The ideal is simple: each of us gives the maximum value we can to other humans, and gets the maximum value back from other humans. We fall short of that because we tend to identify with and prioritize non-human entities - nation, religion, employer, money - which have their place, but shouldn't come before the humans they were built to serve.",
+      "path": "posts/framework.md"
     }
   ],
   "tags": {
     "framework": 1,
-    "older": 1,
     "philosophy": 1
   }
 }
