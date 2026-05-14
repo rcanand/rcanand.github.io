@@ -49,8 +49,18 @@
                         <h2>Posts</h2>
                         <span class="sec-label" id="post-count"></span>
                     </div>
-                    <div id="post-list">
-                        <p style="color: var(--text-dim)">Loading posts...</p>
+                    <div class="blog-layout">
+                        <aside class="tag-sidebar" aria-label="Tags">
+                            <h3 class="tag-sidebar-title">Tags</h3>
+                            <ul id="tag-nav-list" class="tag-list">
+                                <li class="tag-empty">Loading...</li>
+                            </ul>
+                        </aside>
+                        <div class="blog-main">
+                            <div id="post-list">
+                                <p style="color: var(--text-dim)">Loading posts...</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -545,7 +555,17 @@
                 <p style="margin: 2rem 0 1rem">
                     <a href="./" class="btn">&larr; All posts</a>
                 </p>
-                <article id="post-content" class="prose"></article>
+                <div class="blog-layout reader-layout">
+                    <aside class="tag-sidebar" aria-label="Tags">
+                        <h3 class="tag-sidebar-title">Tags</h3>
+                        <ul id="tag-nav-list-reader" class="tag-list">
+                            <li class="tag-empty">Loading...</li>
+                        </ul>
+                    </aside>
+                    <div class="blog-main">
+                        <article id="post-content" class="prose"></article>
+                    </div>
+                </div>
                 <p style="margin: 3rem 0 1rem">
                     <a href="./" class="btn">&larr; All posts</a>
                 </p>

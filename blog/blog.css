@@ -1,5 +1,121 @@
 /* Blog prose styles. Layered on top of site style.css. */
 
+.blog-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+.blog-layout.reader-layout {
+    margin-top: 1rem;
+}
+@media (max-width: 760px) {
+    .blog-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.tag-sidebar {
+    position: sticky;
+    top: 1rem;
+    align-self: start;
+    border-right: 1px solid var(--border);
+    padding-right: 1rem;
+}
+@media (max-width: 760px) {
+    .tag-sidebar {
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding-right: 0;
+        padding-bottom: 1rem;
+    }
+}
+.tag-sidebar-title {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.75rem;
+}
+.tag-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+.tag-list .tag-item a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    color: var(--text-dim);
+    border-radius: 4px;
+    font-size: 0.92rem;
+    text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+.tag-list .tag-item a:hover {
+    background: var(--bg-hover, var(--accent-dim));
+    color: var(--text);
+}
+.tag-list .tag-item.active a {
+    background: var(--accent-dim);
+    color: var(--accent-lt);
+}
+.tag-count {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--text-faint);
+}
+.tag-list .tag-item.active .tag-count {
+    color: var(--accent);
+}
+.tag-empty {
+    color: var(--text-faint);
+    font-size: 0.85rem;
+    padding: 0.25rem 0.5rem;
+}
+
+.post-tag-row {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.4rem;
+}
+.post-tag {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--accent);
+    background: var(--accent-dim);
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    text-decoration: none;
+    border: 1px solid var(--accent-med);
+}
+.post-tag:hover {
+    background: var(--accent-med);
+}
+
+.post-meta .chip {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--accent);
+    background: var(--accent-dim);
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    text-decoration: none;
+    border: 1px solid var(--accent-med);
+}
+.post-meta .chip:hover {
+    background: var(--accent-med);
+}
+
 .prose {
     max-width: 720px;
     margin: 0 auto;
