@@ -4,6 +4,8 @@
 // - Back-compat: legacy /blog/?p=<slug> URLs still work
 // - Supports GFM, fenced code (highlight.js), KaTeX math, Obsidian [[wikilinks]] and ![[image]] embeds
 // - Renders inline #hashtags as clickable tag links
+// - ![](url) auto-detects YouTube / X / Twitter URLs and emits the right embed;
+//   anything else falls through to a plain <img>. Same convention Obsidian uses.
 
 const BLOG_BASE = "/blog/";
 const POSTS_JSON = BLOG_BASE + "posts.json";
@@ -98,6 +100,49 @@ function renderList(posts, activeTag) {
 
 function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+// Embed handlers for the ![](url) markdown image syntax.
+// First match wins. Each handler returns the inner HTML to substitute.
+const EMBED_HANDLERS = [
+    {
+        name: "youtube",
+        match: (url) => {
+            const m = url.match(/^https?:\/\/(?:www\.|m\.)?(?:youtube\.com\/(?:watch\?(?:.*&)?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([\w-]{6,})/i);
+            return m && m[1];
+        },
+        render: (id, alt) => `<div class="embed embed-youtube"><iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}" title="${escapeHtml(alt || "YouTube video")}" loading="lazy" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>`,
+    },
+    {
+        name: "twitter",
+        match: (url) => {
+            const m = url.match(/^https?:\/\/(?:www\.|mobile\.)?(?:x|twitter)\.com\/([^\/?#]+\/status\/\d+)/i);
+            return m && `https://twitter.com/${m[1]}`;
+        },
+        render: (canonical, alt) => `<blockquote class="twitter-tweet" data-theme="dark" data-dnt="true"><p>${alt ? escapeHtml(alt) : "Loading tweet..."}</p><a href="${escapeHtml(canonical)}">View on X</a></blockquote>`,
+    },
+];
+
+function renderEmbed(href, alt) {
+    for (const h of EMBED_HANDLERS) {
+        const m = h.match(href);
+        if (m) return h.render(m, alt);
+    }
+    return null;
+}
+
+function loadTwitterWidgets(scope) {
+    if (window.twttr && window.twttr.widgets) {
+        window.twttr.widgets.load(scope);
+        return;
+    }
+    if (window.__twitterWidgetsLoading) return;
+    window.__twitterWidgetsLoading = true;
+    const s = document.createElement("script");
+    s.async = true;
+    s.charset = "utf-8";
+    s.src = "https://platform.twitter.com/widgets.js";
+    document.body.appendChild(s);
 }
 
 function parseFrontmatter(src) {
@@ -195,6 +240,19 @@ async function renderPost(slug, manifest) {
             })
         );
     }
+    marked.use({
+        renderer: {
+            image(token) {
+                const href = (token && token.href) || "";
+                const text = (token && token.text) || "";
+                const title = (token && token.title) || "";
+                const embedded = renderEmbed(href, text);
+                if (embedded) return embedded;
+                const titleAttr = title ? ` title="${escapeHtml(title)}"` : "";
+                return `<img src="${escapeHtml(href)}" alt="${escapeHtml(text)}"${titleAttr} loading="lazy">`;
+            },
+        },
+    });
     marked.setOptions({ gfm: true, breaks: false });
 
     const html = marked.parse(md);
@@ -224,6 +282,10 @@ async function renderPost(slug, manifest) {
             ],
             throwOnError: false,
         });
+    }
+
+    if (postContent.querySelector(".twitter-tweet")) {
+        loadTwitterWidgets(postContent);
     }
 }
 

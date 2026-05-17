@@ -259,7 +259,6 @@ def render_post_html(post: dict, site_base: str, nav_html: str, footer_html: str
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
         <script src="/blog/blog.js"></script>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </body>
 </html>
 """
