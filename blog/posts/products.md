@@ -1,0 +1,75 @@
+---
+title: Products
+date: 2026-05-13
+tags: [products]
+excerpt: "20 years of building. Each product is part of a larger thread - making complex technology accessible and enabling people to learn, create, and discover."
+---
+
+Each product is part of a larger thread - making complex technology accessible and enabling people to learn, create, and discover.
+
+## 2026 - Maibook - Your Third Brain
+
+Flagship product of MLAI LLC and my current focus. A private community of personalized AI agents expanding on your every activity, on-device on Mac or Windows. Local-first by design - your data never leaves your computer. "The second brain is an AI snapshot of you. The third brain is an ongoing AI live-streaming feed of your activity." Free for a limited time.
+
+Desktop, macOS, Windows, Local AI, MLAI LLC.
+
+[maibook.app](https://maibook.app) - [Docs](https://maibook.app/docs.html) - [Gumroad](https://rcanand.gumroad.com/l/cremjz)
+
+## 2025 - Claude Code CLI Viewer
+
+Dark-mode viewer for Claude Code CLI chat sessions. Browse, search, and visualize AI coding sessions in a rich UI. Launched on Hacker News.
+
+HTML/JS, Developer Tool.
+
+[Gumroad](https://rcanand.gumroad.com/l/ccviewer)
+
+## 2025 - ahai - Local AI Idea Discovery
+
+Native Mac desktop app using [Apple MLX](https://github.com/ml-explore/mlx) to scan markdown files and surface forward-looking concepts - features to build, content to create, ideas to explore. "Rediscover what you meant to do." 100% local, privacy-first. [PySide6](https://www.qt.io/qt-for-python) + [MLX](https://github.com/ml-explore/mlx).
+
+PySide6, MLX, macOS, MLAI LLC.
+
+[Website](https://ahai.app) - [Gumroad](https://rcanand.gumroad.com/l/ahai_v1_0_0)
+
+## 2024 - Haixu - AI Educational Comics
+
+LLM-based pipeline to create educational visual guides from text. Human-AI collaboration on content creation. 68+ comics published on Gumroad across science, history, culture, philosophy, technology. 9 books on Amazon Kindle (author: R. C. Anand). 15 case studies documented on Hashnode.
+
+Python, LLM, MLAI LLC, Gumroad, Kindle.
+
+[Gumroad Store](https://rcanand.gumroad.com) - [Kindle](https://www.amazon.com/stores/R.-C.-Anand/author/B0DNY6PYPW) - [Case Studies](https://rcanand.hashnode.dev/)
+
+> Past explorations - no longer actively developed, but they led to the work above.
+
+## 2020 - Ganglion - News Aggregator
+
+Personalized, multi-source RSS aggregation giving readers control over their information diet.
+
+Web, RSS, Past.
+
+## 2015 - Meon - No-Code Web Platform
+
+Build and host web apps with no code. Predated the current no-code wave by years. 25 product demo/tutorial videos on YouTube.
+
+Web, No-Code, Past.
+
+[YouTube Demos](https://www.youtube.com/watch?v=J86s9a1RUQo)
+
+## Earlier - iOS Game Suite - 7 Educational Games
+
+Sumurai & Sumurai Pro (math puzzles), Smart Run (running quiz), Mathlon (math runner), Matchon, Pop Rage, Exy. Built with [Corona SDK](https://solar2d.com/) for iOS App Store. 30K+ downloads. "Highly appreciated by middle school teachers in the US."
+
+iOS, Corona SDK, Education, Past.
+
+[Sumurai Pro Video](https://www.youtube.com/watch?v=GY4slXiOiDo)
+
+## Earlier - Pikodo, Thouwords, Deeppage, Saynomo
+
+**Pikodo:** Educational comics from Wikipedia - the original vision that later evolved into Haixu with AI.
+**Thouwords:** Visual layer over the textual web with a knowledge graph ("a picture is worth a thousand words").
+**Deeppage:** Multimodal Wikipedia navigation.
+**Saynomo:** Where it started - personalized educational content across modalities.
+
+Web, Knowledge Graph, Education, Past.
+
+> Ongoing AI experiments across 170+ private repositories on [GitHub](https://github.com/rcanand).

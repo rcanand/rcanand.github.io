@@ -1,0 +1,20 @@
+---
+title: Now
+date: 2026-05-01
+tags: [now]
+excerpt: "Current focus, learning, and leisure."
+---
+
+Updated May 2026.
+
+## Latest product
+
+[Maibook](https://maibook.app) - Local, private network of you and AI agents personalized based on your activity, augmenting and extending your brain and time.
+
+## Learning
+
+[Books, papers, courses](/blog/reading_list/) - AI, Math, CS, Physics, Economics, Philosophy.
+
+## Leisure
+
+Books, Movies, Shows, Games - Peaky blinders, Balatro, Dhurandhar 2.

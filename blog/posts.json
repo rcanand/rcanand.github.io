@@ -11,10 +11,100 @@
       "excerpt": "By choosing society over the wild, we agreed to compromise. The ideal is simple: each of us gives the maximum value we can to other humans, and gets the maximum value back from other humans. We fall short of that because we tend to identify with and prioritize non-human entities - nation, religion, employer, money - which have their place, but shouldn't come before the humans they were built to serve.",
       "image": "",
       "path": "posts/framework.md"
+    },
+    {
+      "slug": "about",
+      "title": "About",
+      "date": "2026-05-13",
+      "tags": [
+        "about"
+      ],
+      "excerpt": "Background, career, education, technical stack, design principles, and where to find me.",
+      "image": "",
+      "path": "posts/about.md"
+    },
+    {
+      "slug": "products",
+      "title": "Products",
+      "date": "2026-05-13",
+      "tags": [
+        "products"
+      ],
+      "excerpt": "20 years of building. Each product is part of a larger thread - making complex technology accessible and enabling people to learn, create, and discover.",
+      "image": "",
+      "path": "posts/products.md"
+    },
+    {
+      "slug": "reading_list",
+      "title": "Reading list",
+      "date": "2026-05-13",
+      "tags": [
+        "reading",
+        "books",
+        "papers"
+      ],
+      "excerpt": "What I keep coming back to. Books and papers mixed by theme. Ratings where I've finished and rated; an arrow marks what's next on the shelf.",
+      "image": "",
+      "path": "posts/reading_list.md"
+    },
+    {
+      "slug": "x_threads",
+      "title": "X threads",
+      "date": "2026-05-13",
+      "tags": [
+        "x",
+        "threads"
+      ],
+      "excerpt": "Launches, viewpoints, and technical threads. Originals live on X; this page collects the ones worth keeping.",
+      "image": "",
+      "path": "posts/x_threads.md"
+    },
+    {
+      "slug": "interests",
+      "title": "Interests",
+      "date": "2026-05-01",
+      "tags": [
+        "interests"
+      ],
+      "excerpt": "Topics I've followed over years. AI is the current focus among several.",
+      "image": "",
+      "path": "posts/interests.md"
+    },
+    {
+      "slug": "now",
+      "title": "Now",
+      "date": "2026-05-01",
+      "tags": [
+        "now"
+      ],
+      "excerpt": "Current focus, learning, and leisure.",
+      "image": "",
+      "path": "posts/now.md"
+    },
+    {
+      "slug": "tools",
+      "title": "Tools I'm using right now",
+      "date": "2026-05-01",
+      "tags": [
+        "tools"
+      ],
+      "excerpt": "Daily-driver software and AI tools.",
+      "image": "",
+      "path": "posts/tools.md"
     }
   ],
   "tags": {
+    "about": 1,
+    "books": 1,
     "framework": 1,
-    "philosophy": 1
+    "interests": 1,
+    "now": 1,
+    "papers": 1,
+    "philosophy": 1,
+    "products": 1,
+    "reading": 1,
+    "threads": 1,
+    "tools": 1,
+    "x": 1
   }
 }

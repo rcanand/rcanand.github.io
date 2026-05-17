@@ -1,0 +1,114 @@
+---
+title: About
+date: 2026-05-13
+tags: [about]
+excerpt: "Background, career, education, technical stack, design principles, and where to find me."
+---
+
+## Background
+
+I'm an independent developer and applied AI scientist running [MLAI LLC](https://mlaillc.github.io). I build **personalized, local-first, privacy-focused AI experiences**. I am passionate about AI-based personalized experiences for human end users. Local-first, privacy-focused, personalized.
+
+My career spans multiple stints at **Microsoft** and **Amazon**, plus startups and consulting - with work across enterprise platforms, consumer apps, developer APIs, educational games, and most recently, applied AI. Most recently I was Principal ML Scientist at [**Ripcord**](https://www.ripcord.com/), where I built and launched [Docufai](https://www.docufai.com/blog) - a chat-with-your-documents app using generative AI. Before that, **Microsoft AutoML** (Data Scientist, 2018-2020) and the founding team of **Microsoft BizTalk Server** at the start of my career.
+
+I hold a **B.E. from [IIT Roorkee](https://www.iitr.ac.in/)** and I'm listed on [Toptal](https://www.toptal.com/resume/anand-ramanathan) as a leading applied scientist in LLM/GPT applications.
+
+My current focus is [Maibook](https://maibook.app) - an on-device community of personalized AI agents for Mac and Windows, and the flagship product of MLAI LLC. Beyond Maibook, I work across local AI (Apple MLX, Ollama), agent frameworks, multimodal applications, and Obsidian-based personal knowledge systems. I am a daily power user of **Claude Code at the super-expert level**, well beyond coding - for knowledge work, multi-agent orchestration, content pipelines, and personalized just-in-time interfaces.
+
+A consistent pattern across this work: independently arriving at ideas that later became mainstream. Built a no-code platform years before Webflow and Bubble hit the wave; built visual knowledge graphs over the web before Google's Knowledge Graph entity panels became familiar; ran private multi-LLM-council experiments - a precursor to the now popular [LLM Council](https://github.com/karpathy/llm-council); ran Claude-Code-on-Obsidian workflows - before they became famous as "AI second brain" and [LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f).
+
+> "Value for humans - enable them to learn better, build things they couldn't before, give them control over their digital experiences, and make multimodal experiences over traditionally text-only ones."
+
+### Beyond work
+
+Family - wife and son. Other interests include pure math and theoretical physics, philosophy, mindfulness, meditation, strength training, yoga, deep work, health research, economics, and watching movies and shows in English, Hindi, and Tamil. Currently playing [Balatro](https://www.playbalatro.com/).
+
+## Career
+
+### Current & Recent
+
+| Period | Role | Company |
+|---|---|---|
+| 2020-now | Founder / ML Engineer | MLAI LLC |
+| 2022-2024 | Principal ML Scientist | Ripcord (Docufai) |
+| 2022 | AI/ML Engineer | Healthcare Client (via Toptal) |
+| 2021-2022 | Senior AI Engineer | RedRoute |
+| 2018-2020 | Data Scientist | Microsoft (AutoML) |
+| 2017-2018 | Senior Software Engineer | Divensi (LiDAR/3D ML) |
+| 2015-2019 | Founder | Meon (no-code platform) |
+
+### Earlier Highlights
+
+Multiple earlier stints at **Microsoft** and **Amazon** spanning enterprise, consumer, API, and developer-experience work:
+
+- **Microsoft BizTalk Server** - member of the founding team for Microsoft's flagship enterprise integration server.
+- **Microsoft Outlook** - .NET Outlook API and developer tooling.
+- **Service delivery platforms** - WCF REST API and Visual Studio tooling for service-oriented platforms.
+- **Amazon** - cloud architecture, messaging, workflow and distributed systems.
+- **Thouwords LLC** - founder; visual knowledge-graph layer over the web.
+- **iOS educational games** - 9 shipped titles with 30K+ downloads.
+
+Across these: enterprise platforms, consumer apps, developer APIs, educational games, and now applied AI. More details on [Toptal](https://www.toptal.com/resume/anand-ramanathan).
+
+## Education & Certifications
+
+### Education
+
+**B.E. in Engineering** - [Indian Institute of Technology, Roorkee](https://www.iitr.ac.in/)
+
+### Certifications & Courses
+
+| Course | Provider | Year |
+|---|---|---|
+| Fundamentals of Reinforcement Learning | [University of Alberta](https://www.ualberta.ca/) / [Coursera](https://www.coursera.org/) | 2022 |
+| TensorFlow Developer Certificate | [DeepLearning.AI](https://www.deeplearning.ai/) | 2022 |
+| Cryptocurrency Forecasting Using ML in Power BI | [Coursera](https://www.coursera.org/) | 2022 |
+| NLP with Classification and Vector Spaces | [DeepLearning.AI](https://www.deeplearning.ai/) / [Coursera](https://www.coursera.org/) | 2020 |
+| NLP with Probabilistic Models | [DeepLearning.AI](https://www.deeplearning.ai/) / [Coursera](https://www.coursera.org/) | 2020 |
+| Mathematics for ML: Linear Algebra | [Imperial College London](https://www.imperial.ac.uk/) / [Coursera](https://www.coursera.org/) | 2020 |
+| Data Structures | [UC San Diego](https://ucsd.edu/) / [Coursera](https://www.coursera.org/) | 2020 |
+| Algorithmic Toolbox | [UC San Diego](https://ucsd.edu/) / [Coursera](https://www.coursera.org/) | 2020 |
+| Deep Learning Specialization (5 courses) | [DeepLearning.AI](https://www.deeplearning.ai/) / [Coursera](https://www.coursera.org/) | 2018 |
+| Statistical Learning | [Stanford Online](https://online.stanford.edu/) | 2016 |
+| Introduction to Mathematical Thinking | [Stanford](https://www.stanford.edu/) / [Coursera](https://www.coursera.org/) | 2015 |
+| Human Computer Interaction | [UC San Diego](https://ucsd.edu/) / [Coursera](https://www.coursera.org/) | 2013 |
+
+## Technical Stack
+
+| Category | Technologies |
+|---|---|
+| Core practice | **[Claude Code](https://www.anthropic.com/claude-code) (super-expert)**, [Obsidian](https://obsidian.md/) as second brain, multi-agent orchestration, local-first AI |
+| Languages | [Python](https://www.python.org/), [JavaScript/TypeScript](https://www.typescriptlang.org/), [Rust](https://www.rust-lang.org/), [Swift](https://swift.org/), [Ruby](https://www.ruby-lang.org/), C++, C#, SQL, [R](https://www.r-project.org/) |
+| AI / ML | [MLX](https://github.com/ml-explore/mlx), [Ollama](https://ollama.com/), [OpenAI GPT-4/5](https://openai.com/), [Claude (Opus/Sonnet/Haiku)](https://www.anthropic.com/claude), [HuggingFace](https://huggingface.co/), [PyTorch](https://pytorch.org/), [TensorFlow](https://www.tensorflow.org/), [LangChain](https://www.langchain.com/), RAG, [Stable Diffusion](https://stability.ai/) |
+| Frameworks | [PySide6/Qt](https://www.qt.io/qt-for-python), [FastAPI](https://fastapi.tiangolo.com/), [Flask](https://flask.palletsprojects.com/), [Django](https://www.djangoproject.com/), [Ruby on Rails](https://rubyonrails.org/), [Gradio](https://www.gradio.app/), [Tauri](https://tauri.app/), [Corona SDK](https://solar2d.com/) |
+| Platforms | [AWS](https://aws.amazon.com/), [Azure](https://azure.microsoft.com/), [GCP](https://cloud.google.com/), [Docker](https://www.docker.com/), [Heroku](https://www.heroku.com/), macOS, iOS, Windows |
+| Tools | [Claude Code](https://www.anthropic.com/claude-code), [Obsidian](https://obsidian.md/), [VSCodium](https://vscodium.com/), [Ungoogled Chromium](https://github.com/ungoogled-software/ungoogled-chromium), [NotebookLM](https://notebooklm.google.com/), [X](https://x.com/), [Grok](https://grok.com/) |
+
+## Design Principles
+
+Seven themes that connect everything I've built across 20+ years.
+
+1. **Personalized Discovery** - Finding what matters to each person, not generic results. Saynomo, Ganglion, ahai, Maibook.
+2. **Learning as Value** - Every product has a learning dimension. Saynomo, Sumurai, Smart Run, Pikodo, Haixu.
+3. **Visual Content as Value** - Text alone isn't enough - visuals multiply understanding. Thouwords, Deeppage, Pikodo, Haixu.
+4. **Learning Through Play** - Slipstream education over engagement. Smart Run, Mathlon, Sumurai.
+5. **Enabling Creativity** - Give people tools to build things they couldn't before. Meon, Pikodo, Haixu, Maibook.
+6. **User Control** - People should own and direct their digital lives. Ganglion, ahai, Maibook, local-first philosophy.
+7. **Simplifying Complexity** - Make advanced tech accessible to broad audiences. ahai, Maibook, Claude Code CLI Viewer.
+
+## Find Me
+
+| | |
+|---|---|
+| **Company** | [MLAI LLC](https://mlaillc.github.io) |
+| **GitHub** | [github.com/rcanand](https://github.com/rcanand) |
+| **Toptal** | [toptal.com/resume/anand-ramanathan](https://www.toptal.com/resume/anand-ramanathan) |
+| **LinkedIn** | [linkedin.com/in/anandrc](https://www.linkedin.com/in/anandrc/) |
+| **X** | [@rcanand](https://x.com/rcanand) |
+| **Hashnode** | [rcanand.hashnode.dev](https://rcanand.hashnode.dev/) |
+| **Medium** | [medium.com/@rcanand](https://medium.com/@rcanand) |
+| **Gumroad** | [rcanand.gumroad.com](https://rcanand.gumroad.com) |
+| **Kindle** | [R. C. Anand on Amazon](https://www.amazon.com/stores/R.-C.-Anand/author/B0DNY6PYPW) |
+| **Quora** | [Anand C Ramanathan](https://www.quora.com/profile/Anand-C-Ramanathan) |
+| **Hacker News** | [rcanand2025](https://news.ycombinator.com/user?id=rcanand2025) |
+| **Email** | [rcanand@mlaillc.com](mailto:rcanand@mlaillc.com) |

@@ -1,0 +1,218 @@
+---
+title: X threads
+date: 2026-05-13
+tags: [x, threads]
+excerpt: "Launches, viewpoints, and technical threads. Originals live on X; this page collects the ones worth keeping."
+---
+
+Launches, viewpoints, and technical threads. Originals live on X; this page collects the ones worth keeping.
+
+Updated May 2026.
+
+## Launches
+
+### May 2026 - Maibook v0.1.2
+
+Follow-up - 16GB Mac support after user requests.
+
+> Many of you asked for 16GB Mac support - Maibook v0.1.2 now supports Mac with 16GB RAM! Still free.
+
+[View on X](https://x.com/rcanand/status/2052523834298060880)
+
+### Apr 2026 - Maibook
+
+The flagship launch - on-device community of personalized AI agents.
+
+> The second brain is an AI snapshot of you. The third brain is an ongoing AI live streaming feed of your activity. Introducing Maibook - your third brain. A community of personalized AI agents expanding on your every activity, responding to your every request.
+
+[View on X](https://x.com/rcanand/status/2049580358312903162)
+
+### Jan 2026 - Claude Code Viewer
+
+A standalone viewer for Claude Code logs - 100% local, single HTML file.
+
+> Reading Claude Code logs in the terminal is painful. I got tired of scrolling through raw JSON to debug my agent sessions, so I built a standalone viewer. It turns your CLI history into a full UI. 100% local, single HTML file.
+
+[View on X](https://x.com/rcanand/status/2009149523667644913)
+
+### Dec 2025 - ahai
+
+100% private Mac app using local MLX models - found 1541 ideas across 13447 markdown files.
+
+> ahai - a 100% private Mac app using local mlx AI models - found my 1541 ideas across 13447 markdown files.
+
+[View on X](https://x.com/rcanand/status/1995537139061416216)
+
+### Sep 2024 - Haixu
+
+Case Study #10 from the Haixu series.
+
+> Haixu Case Study #10 - Butterflies
+
+[View on X](https://x.com/rcanand/status/1831372092606165464)
+
+### Apr 2016 - meon
+
+No-code web apps before "no-code" was a category.
+
+> I just launched meon into the wild. Make any web app experience come true, in minutes, no programming needed.
+
+[View on X](https://x.com/rcanand/status/724667260615282688)
+
+and earlier games - [Smart Run (2013)](https://x.com/rcanand/status/293599304612978689), [Pop Rage (2014)](https://x.com/rcanand/status/445794295899897856).
+
+## Viewpoints
+
+### May 2026 - Rich personalized UI with AI - Featured
+
+Four modes for generating personalized AI UI - single-page HTML, web servers, native wrappers, and source-driven auto-generation. The thesis behind Maibook and most of what I've built lately.
+
+> There are a few modes in which we can generate rich personalized ui experiences with AI: single page HTML (viewers, editors, transformers) with search/sort/filter; web servers for multiple views/file system access; native app that wraps either - for an even richer native feel, and private/local experiences. Rich personalized UI built on files is the future.
+
+[View on X](https://x.com/rcanand/status/2053877070141481026)
+
+### May 2026 - AI sentience
+
+Something like AI sentience emerges when models train on what humans said to or about them in previous interactions.
+
+> Something like AI sentience occurs as follows: llms interact with humans. The chats with the model become the next round of training data. The model sees what humans said to it or about it in previous interactions/content. It forms a sense of self around that, responds to it in future interactions.
+
+[View on X](https://x.com/rcanand/status/2054596276059267300)
+
+### May 2026 - Token-by-token
+
+Models interact one new token at a time, not one message at a time. Most tooling hides this.
+
+> Models interact one new token at a time, not one message at a time. And even the tokens can be arbitrarily dropped/modified/etc when sending in the context to the llm. Most popular tooling hides that and exposes the interaction as one message at a time.
+
+[View on X](https://x.com/rcanand/status/2054199165677457449)
+
+### May 2026 - Safe agent design
+
+Safer alternative to AI write-access - read-only agents on local files, referencing Simon Willison's lethal trifecta.
+
+> Maibook was built as a safer alternative to the current AI norm of giving AI unmonitored write access on user's file system and web accounts - read @simonw's lethal trifecta to see why this is dangerous.
+
+[View on X](https://x.com/rcanand/status/2052914565269344354)
+
+### May 2026 - Personal AI network
+
+The next step from LLM Wikis - a private network of you and AI agents.
+
+> I have a more general take on "the next step from LLM Wikis" - a personalized network of you and AI agents that collaborate on your file/web activity - private, local, free right now - uses entirely familiar online groups interaction paradigms.
+
+[View on X](https://x.com/rcanand/status/2052112613195346132)
+
+### Apr 2026 - Second brain vs third brain
+
+The underlying framing for Maibook.
+
+> Second Brain AI: Your data → LLM → An LLM Knowledge Base/wiki of you. Third Brain AI: You (as you evolve) → LLM → A live network of you, your interests and personalized LLMs enriching it, forever.
+
+[View on X](https://x.com/rcanand/status/2049955024361738257)
+
+### Feb 2026 - Engineering with AI
+
+Engineers have a lot more, not less, work to do with AI doing most traditional coding tasks.
+
+> Engineers have a lot more (not less) work to do with AI doing most of traditional coding tasks. There are ∞ choices to make with AI outside of the model itself - choice and sequence of words, models, tool vs pre vs post process.
+
+[View on X](https://x.com/rcanand/status/2022728083057647932)
+
+### Feb 2026 - Operating conjecture
+
+AI can be made to do anything barring domain/physical constraints, given the right context and agency.
+
+> I work under the conjecture that AI can be made to do anything barring domain/physical constraints, given the right context and agency. Increasingly less reliant on better models and more on code, natural language (prompt and context) and safe agency (tools).
+
+[View on X](https://x.com/rcanand/status/2021476285034398203)
+
+### Feb 2026 - "Open" AI
+
+Most so-called "open" AI tools and models abuse the word.
+
+> Most so called "open" AI tools and models abuse the word "open" in bad faith. An open AI tool is useful only if it is private, local, requires no sign-in/signup, and doesn't send data to the cloud by default.
+
+[View on X](https://x.com/rcanand/status/2019555289012596741)
+
+### Sep 2025 - US tech vs employment
+
+Tradeoff between dominance in AI/quantum/blockchain and local employment.
+
+> America needs to prioritize between achieving/retaining dominance in tech (AI, quantum computing, cryptocurrency/blockchain, etc.) vs local employment. If we want to compete for dominance, companies should be empowered to pick the best talent from the global pool.
+
+[View on X](https://x.com/rcanand/status/1969816982859161723)
+
+### Jul 2021 - Decline of the human spirit
+
+A long-running thread that anchors the hero on this site.
+
+> An argument for the impending decline of the human spirit: In the last 10 years or so human curiosity has been systematically butchered. Every kind of human curiosity, useful or casual, has been mostly replaced by an addictive, often useless or even harmful one.
+
+[View on X](https://x.com/rcanand/status/1411700934619525122)
+
+## Technical threads
+
+### Feb 2026 - CC: four plan-and-execute systems
+
+Claude Code has four overlapping plan-and-execute systems. The terminology overlap is genuinely confusing. Here's what each does (9-tweet thread).
+
+> Claude Code now has FOUR overlapping "plan and execute" systems: Plan Mode (built-in), Superpowers Brainstorm (plugin), Superpowers Execute-Plan (subagents + worktrees), Agent Teams (new with Opus 4.6).
+
+[View on X](https://x.com/rcanand/status/2019781840039711092)
+
+### Mar 2026 - Opposing-views technique
+
+Three-prompt technique to get multiple angles on any topic.
+
+> Ask llm to convince me of one view, then in a second session ask it to convince me of the opposite view, then in a third session ask it to resolve both opposite viewpoints. Extremely effective.
+
+[View on X](https://x.com/rcanand/status/2038053717992513916)
+
+### Mar 2026 - AI coding mindset
+
+The bitter pill for AI coding - agents make the choices of an average developer.
+
+> Succeeding with AI coding agents needs engineers to swallow a single bitter pill - the agents will most often make the choices of an average developer. We shd be hands off except when something breaks, and even then only tell them what to do in words.
+
+[View on X](https://x.com/rcanand/status/2034376106305085532)
+
+### Feb 2026 - Skills as cheatsheets
+
+Use Claude Code skills as on-demand crash courses for any tech stack.
+
+> You can get very high quality cheatsheets/crash course/refresher/quick start with idiomatic best practices for a tech component. Just ask Claude Code to create a skill for it, with optional specific preferences.
+
+[View on X](https://x.com/rcanand/status/2018758873512063324)
+
+### Feb 2026 - Brainstorm before plan
+
+How to brainstorm with Claude Code before planning kicks in.
+
+> TIL how to brainstorm with claude code before planning. Use the official plugin /superpowers:brainstorm. Start with that in default mode (not plan mode, which is overeager to generate the plan and start building!). Then, as usual, plan mode → execution.
+
+[View on X](https://x.com/rcanand/status/2019168703896850510)
+
+### Feb 2026 - CC fork/rewind
+
+Mini-tutorial: rewind to continue from earlier; fork for unrelated questions; fork-then-rewind to branch from an earlier point.
+
+> Claude code fork rewind mini-tutorial: rewind - to continue from an earlier point. fork - use current context, for an unrelated question. fork then rewind - fork from an earlier point. Resume any earlier session later as needed.
+
+[View on X](https://x.com/rcanand/status/2021672356293595388)
+
+### Feb 2026 - Manual UI testing
+
+Use Claude Code for the hardest part of manual testing - clean repro steps.
+
+> Claude Code helps with the hardest part of manual UI testing - logging proper repro steps. I just do the clicks, tell it what I found in rough natural language, and CC has the codebase loaded, logs the test report nicely with all relevant details.
+
+[View on X](https://x.com/rcanand/status/2021759817522839705)
+
+### Feb 2026 - AI productivity paradox
+
+Why AI assistance can reduce productivity despite expectations. Applies far beyond coding.
+
+> One of the most useful articles I have read in a long time. Explains the paradox of why AI assistance reduced productivity, in spite of strongly expecting the opposite. Applies to much more than just vibe coding.
+
+[View on X](https://x.com/rcanand/status/2018071595408126021)
