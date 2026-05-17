@@ -193,6 +193,29 @@
     margin: 2rem 0;
 }
 
+/* Twitter embed: constrain width and provide a styled fallback if widgets.js fails */
+.post-body .twitter-tweet { max-width: 550px; margin: 1.25rem 0; }
+.post-body blockquote.twitter-tweet:not([class*=' twitter-tweet-rendered']) {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-left: 2px solid var(--accent);
+    border-radius: 4px;
+    padding: 1rem 1.25rem;
+    color: var(--text-dim);
+    font-style: normal;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+.post-body blockquote.twitter-tweet:not([class*=' twitter-tweet-rendered']) p {
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+.post-body blockquote.twitter-tweet:not([class*=' twitter-tweet-rendered']) a {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--accent);
+}
+
 .post-body .katex-display {
     margin: 1.25rem 0;
     overflow-x: auto; overflow-y: hidden;
