@@ -2,7 +2,7 @@
 title: Personal framework
 date: 2026-05-14
 tags: [philosophy, framework]
-excerpt: By choosing society over the wild, we agreed to compromise. The ideal is simple: each of us gives the maximum value we can to other humans, and gets the maximum value back from other humans. We fall short of that because we tend to identify with and prioritize non-human entities - nation, religion, employer, money - which have their place, but shouldn't come before the humans they were built to serve.
+excerpt: "By choosing society over the wild, we agreed to compromise. The ideal is simple: each of us gives the maximum value we can to other humans, and gets the maximum value back from other humans. We fall short of that because we tend to identify with and prioritize non-human entities - nation, religion, employer, money - which have their place, but shouldn't come before the humans they were built to serve."
 ---
 
 I wrote this, and you are reading this. 
