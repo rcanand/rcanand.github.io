@@ -1,0 +1,36 @@
+title: Anand Ramanathan (RC)
+description: "RC's personal site. AI, Software, Product, Autodidact. Interests include AI/AGI, pure math, theoretical physics, mindfulness, reading, movies and shows, games."
+url: "https://rcanand.com"
+author: Anand Ramanathan
+
+permalink: /blog/:slug/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - scripts
+  - vendor
+  - .worktrees
+  - .DS_Store
+  - node_modules
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post

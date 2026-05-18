@@ -1,0 +1,17 @@
+{% assign active_tag = include.active | default: page.tag %}
+{% assign sorted_tags = site.tags | sort %}
+<aside class="tag-sidebar" aria-label="Tags">
+  <h3 class="tag-sidebar-title">Tags</h3>
+  <ul class="tag-list">
+    <li class="tag-item{% unless active_tag %} active{% endunless %}">
+      <a href="/blog/">All <span class="tag-count">{{ site.posts | size }}</span></a>
+    </li>
+    {% for entry in sorted_tags %}
+      {% assign tag = entry[0] %}
+      {% assign posts = entry[1] %}
+      <li class="tag-item{% if active_tag == tag %} active{% endif %}">
+        <a href="/blog/tag/{{ tag }}/">#{{ tag }} <span class="tag-count">{{ posts | size }}</span></a>
+      </li>
+    {% endfor %}
+  </ul>
+</aside>

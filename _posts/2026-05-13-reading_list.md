@@ -1,6 +1,7 @@
 ---
 title: Reading list
 date: 2026-05-13
+slug: reading_list
 tags: [reading, books, papers]
 excerpt: "What I keep coming back to. Books and papers mixed by theme. Ratings where I've finished and rated; an arrow marks what's next on the shelf."
 ---

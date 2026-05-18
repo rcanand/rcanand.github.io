@@ -1,0 +1,50 @@
+/* Rouge syntax-highlighting theme - dark, atom-one-dark adjacent */
+
+.highlight { background: var(--bg-soft); color: var(--text); }
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs { color: #6b7280; font-style: italic; }
+.highlight .cp { color: #c678dd; }
+.highlight .err { color: #e06c75; }
+.highlight .gd { color: #e06c75; }
+.highlight .gi { color: #98c379; }
+.highlight .gu { color: #61afef; font-weight: bold; }
+.highlight .gh { color: #61afef; font-weight: bold; }
+.highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt, .highlight .kv { color: #c678dd; }
+.highlight .l, .highlight .ld { color: #98c379; }
+.highlight .lf { color: #61afef; }
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx { color: #d19a66; }
+.highlight .n { color: var(--text); }
+.highlight .na { color: #d19a66; }
+.highlight .nb, .highlight .bp { color: #56b6c2; }
+.highlight .nc { color: #e5c07b; }
+.highlight .no { color: #d19a66; }
+.highlight .nd, .highlight .ni, .highlight .ne { color: #c678dd; }
+.highlight .nf, .highlight .fm { color: #61afef; }
+.highlight .nl { color: #61afef; }
+.highlight .nn { color: #e5c07b; }
+.highlight .nx { color: #61afef; }
+.highlight .py { color: var(--text); }
+.highlight .nt { color: #e06c75; }
+.highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi, .highlight .vm { color: #e06c75; }
+.highlight .o, .highlight .ow { color: #56b6c2; }
+.highlight .p, .highlight .pi { color: var(--text); }
+.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .sr, .highlight .s1, .highlight .ss { color: #98c379; }
+.highlight .w { color: var(--text); }
+.highlight .ge { font-style: italic; }
+.highlight .gs { font-weight: bold; }
+.highlight pre { background: transparent; border: none; padding: 0; margin: 0; }
+
+/* Linenos and code-block wrapper */
+.highlight .lineno { color: var(--text-faint); padding-right: 0.6rem; user-select: none; }
+.post-body div.highlight, .post-body figure.highlight {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.9rem 1rem;
+  overflow-x: auto;
+  margin: 1.25rem 0;
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+.post-body div.highlight pre, .post-body figure.highlight pre {
+  margin: 0; padding: 0; background: transparent; border: none; font-family: var(--mono);
+}

@@ -1,0 +1,40 @@
+---
+layout: default
+---
+{% assign tag_posts = site.tags[page.tag] | sort: "date" | reverse %}
+<main>
+  <header class="hero">
+    <div class="container">
+      <p class="hero-label">Tag</p>
+      <h1>#{{ page.tag }}</h1>
+      <p class="hero-sub">{{ tag_posts | size }} post{% if tag_posts.size != 1 %}s{% endif %} tagged #{{ page.tag }}. <a href="/blog/">Show all</a>.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="sec-head">
+        <h2>Posts</h2>
+        <span class="sec-label">{{ tag_posts | size }} post{% if tag_posts.size != 1 %}s{% endif %}</span>
+      </div>
+      <div class="blog-layout">
+        {% include tag_sidebar.html active=page.tag %}
+        <div class="blog-main">
+          <ul class="blog-list">
+            {% for p in tag_posts %}
+              <li>
+                <span class="blog-date">{{ p.date | date: "%b %-d, %Y" }}</span>
+                <span class="blog-title">
+                  <a href="{{ p.url }}">{{ p.title }}</a>
+                  {% if p.excerpt %}<br><span style="color:var(--text-dim); font-weight:normal; font-size:0.9em;">{{ p.excerpt | strip_html | strip_newlines | truncate: 240 }}</span>{% endif %}
+                  {% if p.tags.size > 0 %}<br><span class="post-tag-row">{% for t in p.tags limit:4 %}<a class="post-tag" href="/blog/tag/{{ t | downcase }}/">{{ t }}</a> {% endfor %}</span>{% endif %}
+                </span>
+                <span class="blog-read"></span>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

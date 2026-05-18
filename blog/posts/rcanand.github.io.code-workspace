@@ -1,11 +1,10 @@
 {
-	"folders": [
-		{
-			"path": "../.."
-		},
-		{
-			"path": "../../../mlaillc.github.io"
-		}
-	],
-    "settings": {}
+    "folders": [
+        {
+            "path": "../..",
+        },
+        {
+            "path": "../../../mlaillc.github.io",
+        },
+    ],
 }
