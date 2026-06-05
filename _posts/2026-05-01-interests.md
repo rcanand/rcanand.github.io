@@ -22,7 +22,7 @@ Topics I've followed over years. AI is the current focus among several.
 - [Claude Code at the limit](https://www.anthropic.com/claude-code)
 - [Obsidian as second brain](https://obsidian.md/)
 - [Agent design - lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/)
-- [Identity - AI sentience](/blog/x_threads/#viewpoints)
+- [Identity - AI sentience](/blog/x-threads/#viewpoints)
 
 ## Math & Physics
 
