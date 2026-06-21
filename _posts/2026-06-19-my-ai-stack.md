@@ -16,8 +16,8 @@ This article is a living document - captures a snapshot of my current toolset, a
     - No screenshots needed: GLM-5.2 on openrouter
     - Vision: Minimax-M3 on openrouter
 - Local models (vision, thinking and tool calling):
-    - Qwen3.6
     - Gemma4
+    - Qwen3.6
 - NotebookLM - For deep research and different "views"
 - Grok - For the pulse of the internet AI chats (with X data) and also for a frank uncensored response on many things.
 - Gemini - For web index data and Google properties
