@@ -6,7 +6,7 @@ excerpt: "AI keeps changing, and the best model, agent, tool, etc. are ever chan
 ---
 This article is a living document - captures a snapshot of my current toolset, and updates on why I changed it.
 
-- AI chat - huggingchat
+- AI chat - [huggingchat](https://huggingface.co/chat/) with inference providers, or run [locally](https://github.com/huggingface/chat-ui) with local models
 - Chat LLM - GLM-5.2 and Nvidia Nemotron 3 Ultra (both are incredible)
 - Vision LLM - Kimi K2.6
 - Coding AI harness: [Pi](https://pi.dev)
