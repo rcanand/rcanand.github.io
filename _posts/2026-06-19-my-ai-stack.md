@@ -1,5 +1,5 @@
 ---
-title: My AI and software stack
+title: My AI stack
 date: 2026-06-19
 tags: [ai, updates]
 excerpt: "AI keeps changing, and the best model, agent, tool, etc. are ever changing - this post retains my current AI and software toolchain, with a log of updates to it over time."
