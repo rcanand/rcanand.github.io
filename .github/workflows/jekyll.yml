@@ -32,6 +32,8 @@ jobs:
         run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
+      - name: Index with Pagefind
+        run: npx --yes pagefind --site _site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 

@@ -1,0 +1,80 @@
+---
+layout: default
+title: Search
+permalink: /blog/search/
+---
+
+<main>
+    <section>
+        <div class="container">
+            <div class="blog-layout">
+                {% include tag_sidebar.html %}
+                <div class="blog-main">
+                    <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+                    <div id="search"></div>
+                    <script src="/pagefind/pagefind-ui.js"></script>
+                    <script>
+                        window.addEventListener(
+                            "DOMContentLoaded",
+                            function () {
+                                if (window.PagefindUI) {
+                                    new PagefindUI({
+                                        element: "#search",
+                                        showSubResults: true,
+                                        showImages: false,
+                                        translations: {
+                                            empty: "No results found — try a different term.",
+                                        },
+                                    });
+                                }
+                            },
+                        );
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<style>
+    :root {
+        --pagefind-ui-scale: 0.9;
+        --pagefind-ui-primary: var(--accent);
+        --pagefind-ui-text: var(--text);
+        --pagefind-ui-background: var(--bg-soft);
+        --pagefind-ui-border: var(--border-lt);
+        --pagefind-ui-tag: var(--bg);
+        --pagefind-ui-tag-bg: var(--accent);
+        --pagefind-ui-font: var(--sans);
+        --pagefind-ui-border-radius: 0;
+        --pagefind-ui-border-width: 1px;
+        --pagefind-ui-font-size: 1rem;
+    }
+    .pagefind-ui__search-input {
+        background: var(--bg) !important;
+        color: var(--text) !important;
+        font-family: var(--mono) !important;
+    }
+    .pagefind-ui__search-clear {
+        background: var(--bg) !important;
+    }
+    .pagefind-ui__result {
+        border-color: var(--border) !important;
+    }
+    .pagefind-ui__result-title a {
+        color: var(--accent) !important;
+    }
+    .pagefind-ui__result-title a:hover {
+        color: var(--accent-lt) !important;
+    }
+    .pagefind-ui__result-excerpt {
+        color: var(--text-dim) !important;
+    }
+    .pagefind-ui__result-nested {
+        color: var(--text-faint) !important;
+    }
+    mark {
+        background: var(--accent-med) !important;
+        color: var(--accent-lt) !important;
+    }
+</style>
