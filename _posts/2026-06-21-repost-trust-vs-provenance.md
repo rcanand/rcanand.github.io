@@ -6,7 +6,7 @@ tags:
   - provenance
   - credibility
   - trust
-excerpt: My current recommendations for learning modern AI - changes over time
+excerpt: Reposting a repost from a more credible source adds weight to inner post
 ---
 TLDR: share reposts from credible trusted authorities to interesting content from obscure sources, over the content direct link.
 
