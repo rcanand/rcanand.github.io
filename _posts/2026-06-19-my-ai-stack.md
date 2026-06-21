@@ -4,7 +4,7 @@ date: 2026-06-19
 tags: [ai, updates]
 excerpt: "AI keeps changing, and the best model, agent, tool, etc. are ever changing - this post retains my current AI and software toolchain, with a log of updates to it over time."
 ---
-This article is a living document - captures a snapshot of my current toolset, and updates on why I changed it.
+This article is a living document - captures a snapshot of my current toolset, and occasionally updates on why I changed it.
 
 - AI chat - [huggingchat](https://huggingface.co/chat/) with inference providers, or run [locally](https://github.com/huggingface/chat-ui) with local models
 - Chat LLM - GLM-5.2 and Nvidia Nemotron 3 Ultra (both are incredible)
@@ -22,12 +22,14 @@ This article is a living document - captures a snapshot of my current toolset, a
 - Grok - For the pulse of the internet AI chats (with X data) and also for a frank uncensored response on many things.
 - Gemini - For web index data and Google properties
 - Hermes agent and OpenClaw, but always in a VM - High agency agents
+
+Software stack (highly optimized for AI):
 - OS - Mac
 - Mac VM in Mac - Lume (from cua)
 - Terminal - iTerm2
-- IDE - VSCodium (with telemetry off, basedpyright)
-- Python - uv, pydantic v2, FastAPI
-- data - Files - json, markdown or DB - sqlite
+- IDE - VSCodium (with telemetry off)
+- Python - uv, pydantic v2, FastAPI, basedpyright
+- data - Files - json, markdown with file system conventions, or if needed, DB - sqlite
 - Native app - Pyside 6 for Qt
 - Web frontend - vanilla html/css/js
 
