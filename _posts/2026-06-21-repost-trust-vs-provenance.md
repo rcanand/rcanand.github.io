@@ -1,5 +1,5 @@
 ---
-title: Repost - trust vs provenance
+title: Reposting - trust vs provenance
 date: 2026-06-21
 tags:
   - ai

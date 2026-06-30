@@ -2,7 +2,7 @@
 title: Framework
 date: 2026-05-14
 tags: [philosophy, framework]
-excerpt: "By choosing society over the wild, we agreed to compromise. The ideal is: each of us gives the maximum value we can to other humans, and gets the maximum value back from other humans. But, we instead tend to identify with and prioritize non-human entities - nation, religion, employer, money - which all have their place, but shouldn't come before the humans they were built to serve."
+excerpt: "Proving the seemingly obvious notion that the optimum for a human in society is to create maximum value for oneself in exchange for providing maximum value to other humans."
 ---
 
 I wrote this, and you are reading this. 
