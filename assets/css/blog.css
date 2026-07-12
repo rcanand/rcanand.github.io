@@ -9,6 +9,7 @@
 .blog-layout.reader-layout { margin-top: 0.5rem; }
 @media (max-width: 760px) {
     .blog-layout { grid-template-columns: 1fr; gap: 1.5rem; }
+    .blog-layout .blog-main { order: -1; }
 }
 
 .tag-sidebar {
@@ -21,9 +22,9 @@
     .tag-sidebar {
         position: static;
         border-right: none;
-        border-bottom: 1px solid var(--border);
+        border-top: 1px solid var(--border);
         padding-right: 0;
-        padding-bottom: 1rem;
+        padding-top: 1rem;
     }
 }
 .tag-sidebar-title {
