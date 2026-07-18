@@ -16,7 +16,7 @@ The metric needs exactly two things per model:
 - **A score on a 0-100 scale.** The primary intelligence metric is the [Artificial Analysis Intelligence Index](https://artificialanalysis.ai/), but any benchmark works - in ollamadash the same formula is applied per benchmark axis (coding, math, agentic tasks, and so on).
 - **A price in USD per million tokens.** We take `max(input_price, output_price)` as the single representative price. Cached-token discounts and other pricing nuances are ignored - the point is a fair, simple comparison, not a billing simulation.
 
-Models with missing or $0 prices are excluded from the computation entirely. A $0 price in the data always means "we don't know the price", not "this model is free", and treating it as free would corrupt the fit for everyone else.
+Models with missing or <span>$</span>0 prices are excluded from the computation entirely. A <span>$</span>0 price in the data always means "we don't know the price", not "this model is free", and treating it as free would corrupt the fit for everyone else.
 
 ## The formula
 
@@ -26,7 +26,7 @@ Models with missing or $0 prices are excluded from the computation entirely. A $
 raw = score - λ · log10(price / P_ref)
 ```
 
-- `P_ref` is a reference price of **$0.05/M**, the point of zero penalty. A model priced at $0.05/M keeps its full score; one at $0.50/M loses λ points; one at $5.00/M loses 2λ.
+- `P_ref` is a reference price of **<span>$</span>0.05/M**, the point of zero penalty. A model priced at <span>$</span>0.05/M keeps its full score; one at <span>$</span>0.50/M loses λ points; one at <span>$</span>5.00/M loses 2λ.
 - `λ` (lambda) is **fitted from the dataset, not picked by hand**. It is the slope of an ordinary least-squares regression of score on log10(price) across all models with a valid score and a positive price, rounded to two decimals and recomputed whenever the underlying data refreshes.
 
 λ has a nice interpretation: it is the market's going exchange rate - how many points of intelligence a 10x higher price buys you on average. In the 2026-07-17 snapshot, λ ≈ 10.14 for the intelligence index (other benchmarks range from about 7 to 18). Fitting λ from the data is what keeps the metric fair over time: if intelligence gets cheaper across the board, the slope flattens and the price penalty softens automatically. A hand-picked λ would silently drift out of date.
@@ -51,11 +51,11 @@ Using the 2026-07-17 snapshot for the intelligence benchmark (λ = 10.14, min = 
 
 | model | intelligence | price | raw | scaled value |
 |---|---|---|---|---|
-| Grok 4.5 (high) | 53.8 | $6.00 | 53.8 - 10.14·log10(120) = 32.72 | 100.00 |
-| DeepSeek V4 Flash (max effort) | 40.3 | $0.28 | 40.3 - 10.14·log10(5.6) = 32.71 | 99.99 |
-| Kimi K3 | 57.1 | $15.00 | 57.1 - 10.14·log10(300) = 31.98 | 98.71 |
-| Claude Fable 5 | 59.9 | $50.00 | 59.9 - 10.14·log10(1000) = 29.48 | 94.31 |
-| GPT-4 | 7.0 | $60.00 | 7.0 - 10.14·log10(1200) = -24.22 | 0.00 |
+| Grok 4.5 (high) | 53.8 | <span>$</span>6.00 | 53.8 - 10.14·log10(120) = 32.72 | 100.00 |
+| DeepSeek V4 Flash (max effort) | 40.3 | <span>$</span>0.28 | 40.3 - 10.14·log10(5.6) = 32.71 | 99.99 |
+| Kimi K3 | 57.1 | <span>$</span>15.00 | 57.1 - 10.14·log10(300) = 31.98 | 98.71 |
+| Claude Fable 5 | 59.9 | <span>$</span>50.00 | 59.9 - 10.14·log10(1000) = 29.48 | 94.31 |
+| GPT-4 | 7.0 | <span>$</span>60.00 | 7.0 - 10.14·log10(1200) = -24.22 | 0.00 |
 
 Two things worth noticing. First, the top of the table is a photo finish between a premium model (Grok 4.5) and a budget model (DeepSeek V4 Flash) - the metric is genuinely neutral about *how* you get your value. Second, GPT-4 anchors the bottom: once state of the art, now both weak and expensive relative to the market, so it defines the zero point.
 
