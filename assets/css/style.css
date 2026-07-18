@@ -17,7 +17,7 @@
   --accent-med:rgba(201, 162, 39, 0.24);
   --sans:      'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --mono:      'JetBrains Mono', ui-monospace, monospace;
-  --max-w:     760px;
+  --max-w:     1080px;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }

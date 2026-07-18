@@ -19,9 +19,10 @@ permalink: /blog/
     <div class="container">
       <div class="sec-head">
         <h2>Posts</h2>
+        <button type="button" id="tag-tray-toggle" class="tag-tray-toggle" aria-expanded="false" aria-controls="tag-sidebar"><span class="tag-tray-glyph" aria-hidden="true">#</span> tags</button>
         <span class="sec-label">{{ site.posts | size }} post{% if site.posts.size != 1 %}s{% endif %}</span>
       </div>
-      <div class="blog-layout">
+      <div class="blog-layout tray-mode" id="blog-layout">
         {% include tag_sidebar.html %}
         <div class="blog-main">
           <ul class="blog-list">
@@ -41,6 +42,43 @@ permalink: /blog/
       </div>
     </div>
   </section>
+
+  <script>
+    (function () {
+      var layout = document.getElementById("blog-layout");
+      var btn = document.getElementById("tag-tray-toggle");
+      if (!layout || !btn) return;
+      var KEY = "blog-tag-tray";
+      function setOpen(open) {
+        layout.classList.toggle("tray-open", open);
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        try { localStorage.setItem(KEY, open ? "open" : "closed"); } catch (e) {}
+      }
+      var saved = null;
+      try { saved = localStorage.getItem(KEY); } catch (e) {}
+      if (saved === "open") setOpen(true);
+      btn.addEventListener("click", function () {
+        setOpen(!layout.classList.contains("tray-open"));
+      });
+    })();
+  </script>
+  <noscript>
+    <style>
+      @media (min-width: 761px) {
+        .blog-layout.tray-mode { column-gap: 2.5rem; }
+        .blog-layout.tray-mode .tag-sidebar {
+          width: 200px;
+          padding-right: 1rem;
+          border-right-width: 1px;
+          border-right-color: var(--border);
+          visibility: visible;
+          opacity: 1;
+          pointer-events: auto;
+          transform: none;
+        }
+      }
+    </style>
+  </noscript>
 
   <section>
     <div class="container">

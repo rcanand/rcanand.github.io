@@ -1,6 +1,6 @@
 {% assign active_tag = include.active | default: page.tag %}
 {% assign sorted_tags = site.tags | sort %}
-<aside class="tag-sidebar" aria-label="Tags">
+<aside class="tag-sidebar" id="tag-sidebar" aria-label="Tags">
   <h3 class="tag-sidebar-title">Tags</h3>
   <ul class="tag-list">
     <li class="tag-item{% unless active_tag %} active{% endunless %}">

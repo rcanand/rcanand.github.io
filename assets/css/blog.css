@@ -2,7 +2,7 @@
 
 .blog-layout {
     display: grid;
-    grid-template-columns: 180px 1fr;
+    grid-template-columns: 200px 1fr;
     gap: 2.5rem;
     align-items: start;
 }
@@ -58,6 +58,77 @@
 }
 .tag-list .tag-item.active .tag-count { color: var(--accent); }
 .tag-empty { color: var(--text-faint); font-size: 0.85rem; }
+
+/* Tag tray: on the blog index the sidebar is hidden by default on desktop
+   and slides open like a tray via the toggle button. Mobile keeps the
+   stacked layout (sidebar below the posts list). */
+.tag-tray-toggle { display: none; }
+
+@media (min-width: 761px) {
+    .tag-tray-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        margin-left: 0.25rem;
+        padding: 0.28rem 0.7rem;
+        background: transparent;
+        border: 1px solid var(--border-lt);
+        border-radius: 4px;
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--text-dim);
+        cursor: pointer;
+        transition: color 0.15s, border-color 0.15s;
+    }
+    .tag-tray-toggle:hover { color: var(--text); border-color: var(--text-faint); }
+    .tag-tray-toggle[aria-expanded="true"] { color: var(--accent); border-color: var(--accent); }
+    .tag-tray-glyph { color: var(--text-faint); transition: color 0.15s; }
+    .tag-tray-toggle[aria-expanded="true"] .tag-tray-glyph { color: var(--accent); }
+
+    .blog-layout.tray-mode {
+        grid-template-columns: auto 1fr;
+        column-gap: 0;
+        transition: column-gap 0.25s ease;
+    }
+    .blog-layout.tray-mode .tag-sidebar {
+        width: 0;
+        padding-right: 0;
+        border-right-width: 0;
+        border-right-color: transparent;
+        overflow: hidden;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(-0.5rem);
+        transition:
+            width 0.25s ease,
+            padding-right 0.25s ease,
+            border-color 0.2s ease,
+            opacity 0.2s ease,
+            transform 0.25s ease,
+            visibility 0s linear 0.25s;
+    }
+    /* keep inner content at full width so labels don't re-wrap mid-animation */
+    .blog-layout.tray-mode .tag-sidebar > * { width: 11.4rem; }
+    .blog-layout.tray-mode.tray-open { column-gap: 2.5rem; }
+    .blog-layout.tray-mode.tray-open .tag-sidebar {
+        width: 200px;
+        padding-right: 1rem;
+        border-right-width: 1px;
+        border-right-color: var(--border);
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(0);
+        transition:
+            width 0.25s ease,
+            padding-right 0.25s ease,
+            border-color 0.2s ease,
+            opacity 0.2s ease 0.05s,
+            transform 0.25s ease,
+            visibility 0s;
+    }
+}
 
 /* blog list (used in /blog/ and embedded in /) */
 .blog-list { list-style: none; }
