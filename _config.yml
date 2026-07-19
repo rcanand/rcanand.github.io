@@ -25,6 +25,7 @@ exclude:
   - scripts
   - vendor
   - .worktrees
+  - .obsidian
   - .DS_Store
   - node_modules
 
