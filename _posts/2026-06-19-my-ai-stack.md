@@ -7,12 +7,12 @@ excerpt: "AI keeps changing, and the best model, agent, tool, etc. are ever chan
 This article is a living document - captures a snapshot of my current toolset, and occasionally updates on why I changed it.
 
 - AI chat
-	- grok 4.5 chat at grok.com (use Expert for grok 4.5)
+	- grok 4.5 chat at grok.com (use "Expert" to ensure grok 4.5 or latest)
 	- [huggingchat](https://huggingface.co/chat/) with inference providers, or run huggingchat [locally](https://github.com/huggingface/chat-ui) with local models
 - Primary terminal AI harness (for anything involving local file system, coding or otherwise): [Pi](https://pi.dev)
 - Hosted AI provider: openrouter
 - Local AI provider: ollama
-- AI model: (* indicates no vision)
+- AI model: (* indicates no vision/image input)
 	- simplest to hardest tasks
 		- Qwen3.6 27B
 		- Deepseek-v4-Flash * 
@@ -38,7 +38,7 @@ Software stack (highly optimized for AI):
 - data - Files - json, markdown with file system conventions, or if needed, DB - sqlite
 - Native app - Pyside 6 for Qt
 - Web frontend - vanilla html/css/js
-- **[Obsidian](https://obsidian.md/)** - Long-running. Personal vault, daily notes, frameworks.
+- **[Obsidian](https://obsidian.md/)** - Personal vault, daily notes, frameworks.
 
 ## Past luminaries
 - Claude - As of today (2026-06-19), Claude and Claude Code are a mess - since Opus 4.8, the entire experience with Claude and Claude Code went south, then there was the Fable debacle, and even before that the "no subscription access, even at 200$ per month to best model" - the sota model edge is already being held by a sliver. I think they just gave it away with all the recent choices - both technical and business. Still use it rarely when other things dont work, but there are better options for most things.
