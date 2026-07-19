@@ -1,5 +1,5 @@
 {% assign active_tag = include.active | default: page.tag %}
-{% assign sorted_tags = site.tags | sort %}
+{% assign sorted_tags = site.tags | tags_by_count %}
 <aside class="tag-sidebar" id="tag-sidebar" aria-label="Tags">
   <h3 class="tag-sidebar-title">Tags</h3>
   <ul class="tag-list">
