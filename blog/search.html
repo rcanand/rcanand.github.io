@@ -46,7 +46,7 @@ permalink: /blog/search/
         --pagefind-ui-tag: var(--bg);
         --pagefind-ui-tag-bg: var(--accent);
         --pagefind-ui-font: var(--sans);
-        --pagefind-ui-border-radius: 0;
+        --pagefind-ui-border-radius: 10px;
         --pagefind-ui-border-width: 1px;
         --pagefind-ui-font-size: 1rem;
     }
@@ -76,5 +76,14 @@ permalink: /blog/search/
     mark {
         background: var(--accent-med) !important;
         color: var(--accent-lt) !important;
+        border-radius: 2px;
+    }
+    .pagefind-ui__result {
+        border-radius: var(--radius) !important;
+        padding: 0.75rem 0.25rem !important;
+    }
+    .pagefind-ui__result-link {
+        font-family: var(--serif) !important;
+        font-size: 1.15rem !important;
     }
 </style>

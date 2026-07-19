@@ -1,7 +1,7 @@
 /* Rouge syntax-highlighting theme - dark, atom-one-dark adjacent */
 
 .highlight { background: var(--bg-soft); color: var(--text); }
-.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs { color: #6b7280; font-style: italic; }
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs { color: #7d8590; font-style: italic; }
 .highlight .cp { color: #c678dd; }
 .highlight .err { color: #e06c75; }
 .highlight .gd { color: #e06c75; }
@@ -34,16 +34,17 @@
 .highlight pre { background: transparent; border: none; padding: 0; margin: 0; }
 
 /* Linenos and code-block wrapper */
-.highlight .lineno { color: var(--text-faint); padding-right: 0.6rem; user-select: none; }
+.highlight .lineno { color: var(--text-faint); padding-right: 0.75rem; user-select: none; }
 .post-body div.highlight, .post-body figure.highlight {
   background: var(--bg-soft);
   border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 0.9rem 1rem;
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
   overflow-x: auto;
-  margin: 1.25rem 0;
+  margin: 1.5rem 0;
   font-size: 0.85rem;
-  line-height: 1.55;
+  line-height: 1.6;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
 }
 .post-body div.highlight pre, .post-body figure.highlight pre {
   margin: 0; padding: 0; background: transparent; border: none; font-family: var(--mono);
