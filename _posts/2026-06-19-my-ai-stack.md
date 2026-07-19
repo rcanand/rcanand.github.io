@@ -6,18 +6,23 @@ excerpt: "AI keeps changing, and the best model, agent, tool, etc. are ever chan
 ---
 This article is a living document - captures a snapshot of my current toolset, and occasionally updates on why I changed it.
 
-- AI chat - [huggingchat](https://huggingface.co/chat/) with inference providers, or run [locally](https://github.com/huggingface/chat-ui) with local models
-- Chat LLM - GLM-5.2 and Nvidia Nemotron 3 Ultra (both are incredible)
-- Vision LLM - ~~Kimi K2.6~~ Minimax M3 (evaluating Kimi K2.7 Coder)
-- Primary Coding AI harness: [Pi](https://pi.dev)
+- AI chat
+	- grok 4.5 chat at grok.com (use Expert for grok 4.5)
+	- [huggingchat](https://huggingface.co/chat/) with inference providers, or run huggingchat [locally](https://github.com/huggingface/chat-ui) with local models
+- Primary terminal AI harness (for anything involving local file system, coding or otherwise): [Pi](https://pi.dev)
 - Hosted AI provider: openrouter
 - Local AI provider: ollama
-- Coding AI model:
-    - No screenshots needed: GLM-5.2 on openrouter
-    - Vision: Minimax-M3 on openrouter
-- Local models (vision, thinking and tool calling):
-    - Gemma4
-    - Qwen3.6
+- AI model: (* indicates no vision)
+	- simplest to hardest tasks
+		- Qwen3.6 27B
+		- Deepseek-v4-Flash * 
+		- Minimax M3
+		- GLM 5.2 * 
+		- Grok 4.5
+		- Kimi K3
+	- Alternates
+		- Nemotron 3 Ultra *
+		- Gemma 4 (for local)
 - NotebookLM - For deep research and different "views"
 - Grok - For the pulse of the internet AI chats (with X data) and also for a frank uncensored response on many things.
 - Gemini - For web index data and Google properties
