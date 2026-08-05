@@ -5,6 +5,7 @@ tags:
   - ai
   - llm
   - quantization
+  - ai-generated
 excerpt: A deep dive into the different parts of the model ids - parameters, quantization, but also architectural stems like MXFP8, NVFP4, MLX, etc. - what they mean and how they interact with each other. Semi-raw analysis from claude code.
 ---
 # Model analysis summary

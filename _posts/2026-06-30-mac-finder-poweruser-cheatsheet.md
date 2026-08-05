@@ -6,6 +6,7 @@ tags:
   - finder
   - poweruser
   - cheatsheet
+  - ai-generated
 excerpt: "Mac Finder is grossly underconfigured by default for power users. These are some (AI generated) tweaks to customize it. Warning: Some are verified, others are not, so review each one carefully before using."
 ---
 

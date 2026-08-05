@@ -5,7 +5,8 @@ tags:
   - ai
   - llm
   - quantization
-excerpt: "Analysis of the architectural and quantization stems in model identifiers, ranking them on quality, speed (TTFT and TPS), and size across Mac, Linux, and WSL2 - plus a combination matrix of what stacks and what is mutually exclusive."
+  - ai-generated
+excerpt: Analysis of the architectural and quantization stems in model identifiers, ranking them on quality, speed (TTFT and TPS), and size across Mac, Linux, and WSL2 - plus a combination matrix of what stacks and what is mutually exclusive.
 ---
 
 # Model-ID Stem Analysis: quality / speed / size rankings and combinability

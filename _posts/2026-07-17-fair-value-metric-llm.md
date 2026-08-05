@@ -1,8 +1,12 @@
 ---
 title: A new fair metric for comparing LLMs by intelligence and cost
 date: 2026-07-17
-tags: [ai, metrics, ollamadash]
-excerpt: "A new way to measure LLM value as a combination of intelligence and price - fitted to the market, resistant to cheap-model dominance, and visualized live in ollamadash."
+tags:
+  - ai
+  - metrics
+  - ollamadash
+  - ai-generated
+excerpt: A new way to measure LLM value as a combination of intelligence and price - fitted to the market, resistant to cheap-model dominance, and visualized live in ollamadash.
 ---
 
 How do you compare two models when one is slightly smarter but costs ten times more? Raw benchmark scores ignore price entirely, and naive score-per-dollar ratios let cheap, weak models dominate the rankings. I wanted a single number that answers a simple question: **for what this model costs, how much intelligence am I actually getting?**

@@ -5,7 +5,8 @@ tags:
   - ai
   - llm
   - reference
-excerpt: "Run 04 of the model-ID glossary analysis - resolves context for obscure codename tokens (rnj, hy3, jt, rsnsft, laguna, ling, etc.) by matching them against identifier strings across all three datasets."
+  - ai-generated
+excerpt: Run 04 of the model-ID glossary analysis - resolves context for obscure codename tokens (rnj, hy3, jt, rsnsft, laguna, ling, etc.) by matching them against identifier strings across all three datasets.
 ---
 
 # Run 04 - Context resolution for obscure codename tokens

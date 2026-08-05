@@ -5,7 +5,8 @@ tags:
   - ai
   - llm
   - reference
-excerpt: "A reference that decodes every meaningful stem found in model identifiers across Artificial Analysis, Ollama, and OpenRouter - parameter sizes, quantization/precision formats, runtimes, build-time techniques, capability suffixes, context windows, and vendor codenames."
+  - ai-generated
+excerpt: A reference that decodes every meaningful stem found in model identifiers across Artificial Analysis, Ollama, and OpenRouter - parameter sizes, quantization/precision formats, runtimes, build-time techniques, capability suffixes, context windows, and vendor codenames.
 ---
 
 # Model-ID Glossary: every "part" in the model identifiers across Artificial Analysis, Ollama, and OpenRouter

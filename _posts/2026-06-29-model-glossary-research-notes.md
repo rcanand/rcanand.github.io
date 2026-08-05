@@ -5,7 +5,8 @@ tags:
   - ai
   - llm
   - reference
-excerpt: "Verified findings and source URLs collected as encountered during research for the model-ID glossary - covering GGUF quantization, NVFP4/MX formats, MLX, QAT, MTP, MoE notation, YaRN, distillation, MatFormer, DPO, LASER, reasoning models, abliteration, modality suffixes, and date conventions."
+  - ai-generated
+excerpt: Verified findings and source URLs collected as encountered during research for the model-ID glossary - covering GGUF quantization, NVFP4/MX formats, MLX, QAT, MTP, MoE notation, YaRN, distillation, MatFormer, DPO, LASER, reasoning models, abliteration, modality suffixes, and date conventions.
 ---
 
 # Web research notes for model-ID stems

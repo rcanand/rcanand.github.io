@@ -5,7 +5,8 @@ tags:
   - ai
   - llm
   - reference
-excerpt: "Run 02 of the model-ID glossary analysis - tokenizes every identifier across all three datasets and produces a unified stem frequency table, including special architectural tokens."
+  - ai-generated
+excerpt: Run 02 of the model-ID glossary analysis - tokenizes every identifier across all three datasets and produces a unified stem frequency table, including special architectural tokens.
 ---
 
 # Run 02 - Unified stem frequency table (all IDs tokenized)

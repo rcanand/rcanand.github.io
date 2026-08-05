@@ -5,7 +5,8 @@ tags:
   - ai
   - llm
   - quantization
-excerpt: "Run 07 of the model-ID glossary analysis - re-researches the four hedged claims in the analysis report (Ollama MLX backend, FP4 in llama.cpp, Apple Silicon FP4/FP8 hardware, MLX long-context decode) with sources."
+  - ai-generated
+excerpt: Run 07 of the model-ID glossary analysis - re-researches the four hedged claims in the analysis report (Ollama MLX backend, FP4 in llama.cpp, Apple Silicon FP4/FP8 hardware, MLX long-context decode) with sources.
 ---
 
 # v2 verification: resolving the hedged claims in the analysis report

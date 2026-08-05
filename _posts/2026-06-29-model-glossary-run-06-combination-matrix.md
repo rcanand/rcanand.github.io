@@ -5,7 +5,8 @@ tags:
   - ai
   - llm
   - quantization
-excerpt: "Run 06 of the model-ID glossary analysis - classifies stems into the three orthogonal axes (numeric encoding, runtime, build-time technique) and tabulates which combinations stack, warn, or are mutually exclusive."
+  - ai-generated
+excerpt: Run 06 of the model-ID glossary analysis - classifies stems into the three orthogonal axes (numeric encoding, runtime, build-time technique) and tabulates which combinations stack, warn, or are mutually exclusive.
 ---
 
 # Stem axis classification and combinability (generated)

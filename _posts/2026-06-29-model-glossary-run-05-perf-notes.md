@@ -5,7 +5,8 @@ tags:
   - ai
   - llm
   - quantization
-excerpt: "Run 05 of the model-ID glossary analysis - verified findings and source links on the GGUF quant ladder, MLX vs llama.cpp, NVFP4/MXFP4/FP8, QAT, TTFT vs TPS, and orthogonal build-time techniques."
+  - ai-generated
+excerpt: Run 05 of the model-ID glossary analysis - verified findings and source links on the GGUF quant ladder, MLX vs llama.cpp, NVFP4/MXFP4/FP8, QAT, TTFT vs TPS, and orthogonal build-time techniques.
 ---
 
 # Performance & combination research notes (for [Model-ID glossary analysis](/blog/model-glossary-analysis/))

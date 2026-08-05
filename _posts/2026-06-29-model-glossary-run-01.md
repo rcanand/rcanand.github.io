@@ -5,7 +5,8 @@ tags:
   - ai
   - llm
   - reference
-excerpt: "Run 01 of the model-ID glossary analysis - extracts and counts identifier strings, families, quantization labels, variants, parameter sizes, and providers across the Ollama, OpenRouter, and Artificial Analysis datasets."
+  - ai-generated
+excerpt: Run 01 of the model-ID glossary analysis - extracts and counts identifier strings, families, quantization labels, variants, parameter sizes, and providers across the Ollama, OpenRouter, and Artificial Analysis datasets.
 ---
 
 # Run 01 - Core ID inventory across the three sources

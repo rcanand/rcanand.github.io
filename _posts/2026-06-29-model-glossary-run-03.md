@@ -5,7 +5,8 @@ tags:
   - ai
   - llm
   - reference
-excerpt: "Run 03 of the model-ID glossary analysis - lists Ollama tags carrying advanced quantization, format, and training stems (NVFP4, MXFP8, FP8, QAT, MTP, MLX, INT4, INT8)."
+  - ai-generated
+excerpt: Run 03 of the model-ID glossary analysis - lists Ollama tags carrying advanced quantization, format, and training stems (NVFP4, MXFP8, FP8, QAT, MTP, MLX, INT4, INT8).
 ---
 
 # Run 03 - Ollama tags carrying advanced quant/format/training stems
