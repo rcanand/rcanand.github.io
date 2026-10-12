@@ -43,6 +43,8 @@ h1 .q{color:var(--accent)}
 .controls{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
 .btn{font:500 12.5px/1 var(--mono);color:var(--ink);background:transparent;border:1px solid var(--rule);border-radius:8px;padding:8px 11px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
 .btn:hover{border-color:var(--line)}
+.btn:disabled{opacity:.38;cursor:default}
+@media (max-width:480px){.controls .seg .btn{padding:8px 7px;font-size:12px}}.btn:disabled:hover{border-color:var(--rule)}
 .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent);min-width:92px;justify-content:center}
 .btn[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--ink)}
 .seg{display:inline-flex;border:1px solid var(--rule);border-radius:8px;overflow:hidden}
@@ -283,8 +285,12 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--rule);font-si
   <section class="player" id="player" aria-label="Timeline player">
     <div class="controls">
       <button class="btn primary" id="playBtn" type="button" aria-label="Play">▶ Play</button>
-      <button class="btn" id="prevBtn" type="button">‹ Prev</button>
-      <button class="btn" id="nextBtn" type="button">Next ›</button>
+      <div class="seg" role="group" aria-label="Step through time">
+        <button class="btn" id="firstBtn" type="button" title="Jump to the earliest event" aria-label="Earliest event">⇤ Earliest</button>
+        <button class="btn" id="prevBtn" type="button" title="Step to the next earlier event" aria-label="Earlier event">‹ Earlier</button>
+        <button class="btn" id="nextBtn" type="button" title="Step to the next later event" aria-label="Later event">Later ›</button>
+        <button class="btn" id="lastBtn" type="button" title="Jump to the latest event" aria-label="Latest event">Latest ⇥</button>
+      </div>
       <div class="seg" role="group" aria-label="Speed">
         <button class="btn" type="button" data-speed="0.5" aria-pressed="false">0.5×</button>
         <button class="btn" type="button" data-speed="1" aria-pressed="true">1×</button>
@@ -1756,7 +1762,7 @@ function render(){const e=EVENTS[st.cur];const lc=`var(--c-${e.l})`;
    <h2 class="ev-title">${esc(e.t)}</h2><p class="ev-sum">${esc(e.s)}</p>
    ${e.tg.length?`<div class="tags">${e.tg.map(t=>`<span>${esc(t)}</span>`).join("")}</div>`:""}
    <div class="src">Source: <a href="${e.u}" target="_blank" rel="noopener">${esc(e.src)} ↗</a></div>
-   <div class="hint">Space: play / pause · ← → step · click any dot</div>`;
+   <div class="hint">Space: play / pause · ← earlier · → later · Home / End: earliest / latest · click any dot</div>`;
   let r="";
   if(e.f)r+=figBlock(e.f,FIGNUM[e.f]);
   if(e.p)r+=(e.f?`<div style="height:12px"></div>`:"")+`<div class="fig">${snipBlock(e.p)}</div>`;
@@ -1769,7 +1775,9 @@ function render(){const e=EVENTS[st.cur];const lc=`var(--c-${e.l})`;
   const sc=document.getElementById("trackScroll");if(sc.scrollWidth>sc.clientWidth){const px=dots[st.cur].offsetLeft+150;const target=px-sc.clientWidth/2;sc.scrollTo({left:Math.max(0,target),behavior:reduce?"auto":"smooth"});}
   moeTick();updateCounter();}
 
-function updateCounter(){const s=seq();document.getElementById("counter").textContent=`${Math.max(1,s.indexOf(EVENTS[st.cur])+1)} / ${s.length} events`;}
+function updateCounter(){const s=seq();document.getElementById("counter").textContent=`${Math.max(1,s.indexOf(EVENTS[st.cur])+1)} / ${s.length} events`;
+  const tl=EVENTS.filter(visible);const k=tl.indexOf(EVENTS[st.cur]);const atE=k<=0,atL=k===tl.length-1;
+  ["firstBtn","prevBtn"].forEach(id=>{const b=document.getElementById(id);if(b)b.disabled=atE;});["nextBtn","lastBtn"].forEach(id=>{const b=document.getElementById(id);if(b)b.disabled=atL;});}
 
 function go(i){st.cur=i;render();schedule();}
 function step(dir){const s=seq();const k=s.indexOf(EVENTS[st.cur]);const n=s[k+dir];
@@ -1784,12 +1792,17 @@ function schedule(){clearTimeout(st.timer);bar.classList.remove("run");bar.style
 function setPlaying(p){const s=seq();if(p&&s.indexOf(EVENTS[st.cur])===s.length-1)st.cur=s[0].i,render();
   st.playing=p;playBtn.textContent=p?"❚❚ Pause":"▶ Play";playBtn.setAttribute("aria-label",p?"Pause":"Play");schedule();}
 playBtn.addEventListener("click",()=>setPlaying(!st.playing));
-document.getElementById("prevBtn").addEventListener("click",()=>step(-1));
-document.getElementById("nextBtn").addEventListener("click",()=>step(1));
+/* Earlier/Later always move through time, whichever playback order is chosen */
+const stepTime=d=>step(DESC()?-d:d);
+const edge=latest=>{const s=EVENTS.filter(visible);const t=latest?s[s.length-1]:s[0];if(t)go(t.i,true);};
+document.getElementById("prevBtn").addEventListener("click",()=>stepTime(-1));
+document.getElementById("nextBtn").addEventListener("click",()=>stepTime(1));
+document.getElementById("firstBtn").addEventListener("click",()=>edge(false));
+document.getElementById("lastBtn").addEventListener("click",()=>edge(true));
 document.querySelectorAll("[data-speed]").forEach(b=>b.addEventListener("click",()=>{st.speed=+b.dataset.speed;document.querySelectorAll("[data-speed]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));schedule();}));
 document.addEventListener("keydown",ev=>{const tg=ev.target.tagName;if(tg==="INPUT"||tg==="SELECT"||tg==="TEXTAREA")return;
   if(ev.code==="Space"&&tg!=="BUTTON"){ev.preventDefault();setPlaying(!st.playing);}
-  else if(ev.key==="ArrowRight"){step(DESC()?-1:1);}else if(ev.key==="ArrowLeft"){step(DESC()?1:-1);}});
+  else if(ev.key==="ArrowRight"){stepTime(1);}else if(ev.key==="ArrowLeft"){stepTime(-1);}else if(ev.key==="Home"){ev.preventDefault();edge(false);}else if(ev.key==="End"){ev.preventDefault();edge(true);}});
 function startIndex(){const s=seq();if(!s.length)return 0;if(!DESC()){const a=s.find(e=>e.t.indexOf("Attention Is All")>=0);if(a)return a.i;}return s[0].i;}
 function setOrder(o){if(o===st.order)return;st.order=o;lsSet("ae-order",o);
   document.querySelectorAll("[data-order]").forEach(x=>x.setAttribute("aria-pressed",String(x.dataset.order===o)));
