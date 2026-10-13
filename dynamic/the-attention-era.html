@@ -59,6 +59,10 @@ h1 .q{color:var(--accent)}
 .chip{font:500 12px/1 var(--body);color:var(--ink);background:var(--bg);border:1px solid var(--rule);border-radius:999px;padding:6px 10px 6px 8px;cursor:pointer;display:inline-flex;gap:6px;align-items:center}
 .chip i{width:9px;height:9px;border-radius:50%;background:var(--c);display:inline-block}
 .chip[aria-pressed="false"]{opacity:.45;text-decoration:line-through}
+.chip.chip-all{font-weight:600;padding:6px 11px}
+.chip.chip-all[aria-pressed="false"]{opacity:.7;text-decoration:none}
+.chip.chip-all[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent)}
+.empty{color:var(--ink-2);margin:6px 0}
 select{font:500 12px var(--mono);color:var(--ink);background:var(--bg);border:1px solid var(--rule);border-radius:8px;padding:6px 8px}
 
 /* Track */
@@ -84,20 +88,20 @@ select{font:500 12px var(--mono);color:var(--ink);background:var(--bg);border:1p
 .playhead::before{content:"";position:absolute;top:-1px;left:-4px;border:5px solid transparent;border-top:7px solid var(--ink)}
 .nowmark{position:absolute;top:0;bottom:22px;border-left:1.5px dotted var(--accent)}
 .nowmark b{position:absolute;top:2px;left:4px;font:500 9.5px var(--mono);color:var(--accent);white-space:nowrap}
-.evbar{height:3px;background:var(--bg2);border-radius:3px;overflow:hidden}
-.evbar i{display:block;height:100%;width:0;background:var(--accent)}
+.evbar{height:2px;background:transparent;border-radius:2px;overflow:hidden}
+.evbar i{display:block;height:100%;width:0;background:var(--line);opacity:.3}
 .evbar i.run{animation:fill linear forwards}
 @keyframes fill{to{width:100%}}
 
 /* Stage */
 .stage{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:22px;align-items:start;padding:6px 4px 4px}
 .stage-l{display:grid;gap:10px;min-width:0}
-.date-big{font:800 clamp(2.2rem,5vw,3.4rem)/1 var(--display);letter-spacing:-0.03em;font-variant-numeric:tabular-nums}
+.date-big{font:500 12.5px/1.3 var(--mono);letter-spacing:.04em;color:var(--ink-2);font-variant-numeric:tabular-nums}
 .meta{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
 .lane-tag{font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--c);display:inline-flex;gap:6px;align-items:center}
 .lane-tag i{width:9px;height:9px;border-radius:50%;background:var(--c)}
 .val{font:500 11px var(--mono);color:var(--ink-2);letter-spacing:.04em}
-.ev-title{font:700 clamp(1.35rem,2.6vw,1.85rem)/1.12 var(--display);margin:0;letter-spacing:-0.015em;text-wrap:balance}
+.ev-title{font:800 clamp(1.6rem,3vw,2.25rem)/1.08 var(--display);margin:0;letter-spacing:-0.02em;text-wrap:balance}
 .ev-sum{margin:0;max-width:62ch}
 .tags{display:flex;flex-wrap:wrap;gap:5px}
 .tags span{font:500 11px/1 var(--mono);color:var(--ink-2);border:1px solid var(--rule);border-radius:999px;padding:4px 8px}
@@ -273,7 +277,7 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--rule);font-si
   <header class="top">
     <div class="eyebrow">An explorable timeline of AI · 2017 → 12 October 2026 · emphasis on 2022 onward</div>
     <h1>The Attention Era<span class="q">.</span></h1>
-    <p class="lede">From the Transformer paper to GPT‑6, Claude Opus 5.5 and today’s Muse Wonder, on nine lanes: research and evals, open and proprietary models, the harnesses and agents built around them, products, money and chips, law, safety incidents, culture, and the debate over whether AI could matter morally. Press play, or click any dot. Every event links to its source; architecture events show the block diagram and prompting events show the prompt pattern.</p>
+    <p class="lede">An animated interactive timeline of key events from transformers to present day. <a href="#concepts">Concepts</a>, <a href="#prompts">prompts</a>, <a href="#terms">glossary</a> and a full <a href="#log">list</a> of events.</p>
     <div class="legend-row" aria-label="Legend">
       <span><b>▲</b> progress or capability gain</span>
       <span><b>▼</b> harm, failure or incident</span>
@@ -313,6 +317,8 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--rule);font-si
     </div>
     <div class="filters" id="filters">
       <span class="lbl">Lanes</span>
+      <button class="chip chip-all" type="button" id="laneAll" aria-pressed="true">All</button>
+      <button class="chip chip-all" type="button" id="laneNone" aria-pressed="false">None</button>
     </div>
     <div class="track-scroll" id="trackScroll">
       <div class="track">
@@ -325,6 +331,18 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--rule);font-si
       <div class="stage-l" id="stageL"></div>
       <div id="stageR"></div>
     </div>
+  </section>
+
+  <section class="block" id="log">
+    <div class="sec-h">
+      <h2>All events</h2>
+      <p id="logNote">Follows the lane and type filters above.</p>
+      <div class="seg" role="group" aria-label="Log order" style="margin-top:10px;width:max-content;justify-self:start;align-self:start">
+        <button class="btn" type="button" data-logorder="desc" aria-pressed="true">Newest first</button>
+        <button class="btn" type="button" data-logorder="asc" aria-pressed="false">Oldest first</button>
+      </div>
+    </div>
+    <div id="logList"></div>
   </section>
 
   <section class="block" id="concepts">
@@ -350,17 +368,6 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--rule);font-si
     <dl class="glossary" id="glossary"></dl>
   </section>
 
-  <section class="block" id="log">
-    <div class="sec-h">
-      <h2>Every event</h2>
-      <p>The full chronological log, regardless of the player filters.</p>
-      <div class="seg" role="group" aria-label="Log order" style="margin-top:10px;width:max-content;justify-self:start;align-self:start">
-        <button class="btn" type="button" data-logorder="desc" aria-pressed="true">Newest first</button>
-        <button class="btn" type="button" data-logorder="asc" aria-pressed="false">Oldest first</button>
-      </div>
-    </div>
-    <div id="logList"></div>
-  </section>
 
   <footer>
     <div>Sources are linked on every event. Many 2026 events rely on news coverage published at the time, and some on secondary write-ups; claims that were still unverified or disputed when compiled (for example the Navier–Stokes proof, vendor benchmark numbers, the Hugging Face breach post-mortems) say so in their summaries, and weakly sourced items carry an “unconfirmed” tag.</div>
@@ -1399,7 +1406,11 @@ const playhead=document.getElementById("playhead");
 /* filters */
 const fEl=document.getElementById("filters");
 LANES.forEach(l=>{const b=document.createElement("button");b.type="button";b.className="chip";b.setAttribute("aria-pressed","true");b.style.setProperty("--c",`var(--c-${l.k})`);b.innerHTML=`<i></i>${esc(l.n)}`;
-  b.addEventListener("click",()=>{const on=st.lanes.has(l.k);if(on&&st.lanes.size===1)return;on?st.lanes.delete(l.k):st.lanes.add(l.k);b.setAttribute("aria-pressed",String(!on));applyFilter();});fEl.appendChild(b);});
+  b.dataset.lane=l.k;b.addEventListener("click",()=>{const on=st.lanes.has(l.k);on?st.lanes.delete(l.k):st.lanes.add(l.k);applyFilter();});fEl.appendChild(b);});
+function syncChips(){fEl.querySelectorAll("[data-lane]").forEach(x=>x.setAttribute("aria-pressed",String(st.lanes.has(x.dataset.lane))));
+  document.getElementById("laneAll").setAttribute("aria-pressed",String(st.lanes.size===LANES.length));document.getElementById("laneNone").setAttribute("aria-pressed",String(st.lanes.size===0));}
+document.getElementById("laneAll").addEventListener("click",()=>{st.lanes=new Set(LANES.map(l=>l.k));applyFilter();});
+document.getElementById("laneNone").addEventListener("click",()=>{st.lanes=new Set();applyFilter();});
 fEl.insertAdjacentHTML("beforeend",`<span class="lbl" style="margin-left:10px">Show</span><select id="valSel" aria-label="Filter by reception"><option value="all">All events</option><option value="+">▲ Progress</option><option value="-">▼ Harms &amp; incidents</option><option value="~">◆ Contested</option></select>`);
 document.getElementById("valSel").addEventListener("change",ev=>{st.val=ev.target.value;applyFilter();});
 
@@ -1409,7 +1420,8 @@ function buildYears(){yEl.innerHTML="";const ys=[2017,2020,2022,2023,2024,2025,2
   b.addEventListener("click",()=>{const s=seq();const t=DESC()?s.find(e=>e.y<=(y===2017?2021:y)):s.find(e=>e.y>=y);if(t)go(t.i,true);});yEl.appendChild(b);});}
 buildYears();
 
-function applyFilter(){EVENTS.forEach((e,i)=>dots[i].classList.toggle("off",!visible(e)));
+function applyFilter(){EVENTS.forEach((e,i)=>dots[i].classList.toggle("off",!visible(e)));syncChips();renderLog();
+  if(!seq().length){setPlaying(false);cancelAnimationFrame(scRaf);L.innerHTML=`<p class="empty">No events to show. Pick a lane above, or All.</p>`;R.innerHTML="";dots.forEach(d=>d.classList.remove("cur"));updateCounter();return;}
   if(!visible(EVENTS[st.cur])){const s=seq();const cm=EVENTS[st.cur].ms;const n=s.find(e=>DESC()?e.ms<=cm:e.ms>=cm)||s[s.length-1];if(n){go(n.i,false);return;}}
   updateCounter();schedule();}
 
@@ -1607,7 +1619,7 @@ SCN.terminal=(e,p)=>{const L=(p.lines||termAuto(e)).slice(0,7);let h=`<rect clas
   h+=`<rect class="lc blink" x="40" y="${76+L.length*29-12}" width="8" height="15"/>`;return{h,name:p.name||"Agent session",dur:d};};
 
 SCN.proof=(e,p)=>{const L=(p.lines||["theorem result (n : ℕ) :","  ∀ n, P n := by","  intro n","  induction n with","  | zero => simp","  | succ k ih => omega"]).slice(0,6);
-  let h=`<rect class="card" x="20" y="16" width="330" height="268" rx="12"/><text class="kick" x="38" y="42">${esc(p.kick||"Formal proof · illustrative")}</text>`;let d=200;
+  let h=`<rect class="card" x="20" y="16" width="330" height="268" rx="12"/><text class="kick" x="38" y="42">${esc(p.kick||"Formal proof")}</text>`;let d=200;
   L.forEach((s,i)=>{const y=74+i*30;h+=TYPE(38,y,s,"mono",d,12).replace("<text",'<text font-size="12.5"');d+=s.length*12+160;h+=`<text class="pop" x="330" y="${y}" text-anchor="end" font-size="13" style="--d:${(d/1000).toFixed(2)}s;fill:var(--c-har)">✓</text>`;});
   const v=p.verdict||"VERIFIED";const col=/DISPUT|CONTEST|WITHDRAWN/.test(v)?"var(--c-saf)":/REVIEW|PENDING/.test(v)?"var(--c-biz)":"var(--c-har)";
   h+=`<g class="stamp" style="--d:${(d/1000+.2).toFixed(2)}s"><rect x="${450-tw(v,15)/2}" y="122" width="${tw(v,15)}" height="40" rx="8" fill="none" stroke="${col}" stroke-width="3"/><text class="mono" x="450" y="148" text-anchor="middle" font-size="15" font-weight="600" style="fill:${col}">${esc(v)}</text></g>`;
@@ -1740,7 +1752,7 @@ SCN.versus=(e,p)=>{const A=p.a||{n:"Side A",pts:[]},B=p.b||{n:"Side B",pts:[]};l
 /* ---------- mount ---------- */
 function sceneFor(e){if(e.vz&&e.vz.k)return Object.assign({},e.vz);return Object.assign(autoScene(e),e.vz||{});}
 function sceneHTML(e){const p=sceneFor(e);const f=SCN[p.k]||SCN.paper;const out=f(e,p);
-  return{html:`<div class="fig scene"><div class="fig-h"><span class="no">Scene</span><span class="nm">${esc(p.hd||out.name)}</span></div><div class="svgbox"><svg class="sc" viewBox="0 0 560 300" role="img" aria-label="${esc(out.name+": "+e.t)}" style="--lc:var(--c-${e.l})">${out.h}</svg></div><p class="fig-cap">${esc(p.note2||"Schematic animation. Names, numbers and quotes come from this event’s summary; shapes are illustrative.")}</p></div>`,tick:out.tick,dur:out.dur};}
+  return{html:`<div class="fig scene"><div class="svgbox"><svg class="sc" viewBox="0 0 560 300" role="img" aria-label="${esc(out.name+": "+e.t)}" style="--lc:var(--c-${e.l})">${out.h}</svg></div></div>`,tick:out.tick,dur:out.dur};}
 function runScene(root,tick){cancelAnimationFrame(scRaf);const t0=performance.now();const fmtN=(el,v)=>{const dec=+el.dataset.dec;let s=v.toFixed(dec);if(el.dataset.comma==="1")s=Number(s).toLocaleString("en-US",{minimumFractionDigits:dec,maximumFractionDigits:dec});el.textContent=el.dataset.pre+s+el.dataset.suf;};
   const cn=[...root.querySelectorAll("[data-count]")],ty=[...root.querySelectorAll("[data-type]")];
   if(reduce){cn.forEach(el=>fmtN(el,+el.dataset.count));if(tick)tick(4000,root);return;}
@@ -1757,9 +1769,9 @@ function nearbyHTML(e){const s=seq();const k=s.indexOf(e);const nb=[s[k-2],s[k-1
 EVENTS.forEach(e=>{if(VZ[e.t])e.vz=VZ[e.t];});
 
 function render(){const e=EVENTS[st.cur];const lc=`var(--c-${e.l})`;
-  L.innerHTML=`<div class="date-big">${fmt(e.d)}</div>
-   <div class="meta"><span class="lane-tag" style="--c:${lc}"><i></i>${esc(laneName(e.l))}</span><span class="val">${VAL[e.v][0]} ${VAL[e.v][1]}</span></div>
-   <h2 class="ev-title">${esc(e.t)}</h2><p class="ev-sum">${esc(e.s)}</p>
+  L.innerHTML=`<h2 class="ev-title">${esc(e.t)}</h2>
+   <div class="meta"><span class="date-big">${fmt(e.d)}</span><span class="lane-tag" style="--c:${lc}"><i></i>${esc(laneName(e.l))}</span><span class="val">${VAL[e.v][0]} ${VAL[e.v][1]}</span></div>
+   <p class="ev-sum">${esc(e.s)}</p>
    ${e.tg.length?`<div class="tags">${e.tg.map(t=>`<span>${esc(t)}</span>`).join("")}</div>`:""}
    <div class="src">Source: <a href="${e.u}" target="_blank" rel="noopener">${esc(e.src)} ↗</a></div>
    <div class="hint">Space: play / pause · ← earlier · → later · Home / End: earliest / latest · click any dot</div>`;
@@ -1775,7 +1787,7 @@ function render(){const e=EVENTS[st.cur];const lc=`var(--c-${e.l})`;
   const sc=document.getElementById("trackScroll");if(sc.scrollWidth>sc.clientWidth){const px=dots[st.cur].offsetLeft+150;const target=px-sc.clientWidth/2;sc.scrollTo({left:Math.max(0,target),behavior:reduce?"auto":"smooth"});}
   moeTick();updateCounter();}
 
-function updateCounter(){const s=seq();document.getElementById("counter").textContent=`${Math.max(1,s.indexOf(EVENTS[st.cur])+1)} / ${s.length} events`;
+function updateCounter(){const s=seq();document.getElementById("counter").textContent=s.length?`${Math.max(1,s.indexOf(EVENTS[st.cur])+1)} / ${s.length} events`:"0 events";
   const tl=EVENTS.filter(visible);const k=tl.indexOf(EVENTS[st.cur]);const atE=k<=0,atL=k===tl.length-1;
   ["firstBtn","prevBtn"].forEach(id=>{const b=document.getElementById(id);if(b)b.disabled=atE;});["nextBtn","lastBtn"].forEach(id=>{const b=document.getElementById(id);if(b)b.disabled=atL;});}
 
@@ -1789,7 +1801,7 @@ function dur(){const e=EVENTS[st.cur];return((e.f||e.p)?6500:Math.min(9000,Math.
 function schedule(){clearTimeout(st.timer);bar.classList.remove("run");bar.style.animationDuration="";void bar.offsetWidth;
   if(!st.playing){bar.style.width="0";return;}
   bar.style.width="";const d=dur();bar.style.animationDuration=d+"ms";bar.classList.add("run");st.timer=setTimeout(()=>step(1),d);}
-function setPlaying(p){const s=seq();if(p&&s.indexOf(EVENTS[st.cur])===s.length-1)st.cur=s[0].i,render();
+function setPlaying(p){const s=seq();if(p&&!s.length)return;if(p&&s.indexOf(EVENTS[st.cur])===s.length-1)st.cur=s[0].i,render();
   st.playing=p;playBtn.textContent=p?"❚❚ Pause":"▶ Play";playBtn.setAttribute("aria-label",p?"Pause":"Play");schedule();}
 playBtn.addEventListener("click",()=>setPlaying(!st.playing));
 /* Earlier/Later always move through time, whichever playback order is chosen */
@@ -1817,7 +1829,7 @@ document.addEventListener("click",ev=>{
     const fallback=()=>{const pre=c.closest(".snip-wrap").querySelector("pre");const r=document.createRange();r.selectNodeContents(pre);const sel=getSelection();sel.removeAllRanges();sel.addRange(r);c.textContent="Selected";setTimeout(()=>c.textContent="Copy",1400);};
     try{navigator.clipboard.writeText(txt).then(done,fallback);}catch(_){fallback();}return;}
   const g=ev.target.closest("[data-go]");if(g){const i=+g.dataset.go;const e=EVENTS[i];
-    if(!visible(e)){st.lanes=new Set(LANES.map(l=>l.k));st.val="all";document.getElementById("valSel").value="all";fEl.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed","true"));EVENTS.forEach((x,j)=>dots[j].classList.remove("off"));}
+    if(!visible(e)){st.lanes=new Set(LANES.map(l=>l.k));st.val="all";document.getElementById("valSel").value="all";EVENTS.forEach((x,j)=>dots[j].classList.remove("off"));syncChips();renderLog();}
     go(i,true);if(g.dataset.scroll)document.getElementById("player").scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});}
 });
 
@@ -1838,7 +1850,9 @@ GLOSSARY.forEach(([t,d])=>gl.insertAdjacentHTML("beforeend",`<div><dt>${esc(t)}<
 
 /* ---------- log ---------- */
 const lg=document.getElementById("logList");
-function renderLog(){lg.innerHTML="";let yr=null,box=null;const list=st.logOrder==="desc"?EVENTS.slice().reverse():EVENTS;
+function renderLog(){if(!lg)return;lg.innerHTML="";let yr=null,box=null;const vis=EVENTS.filter(visible);const list=st.logOrder==="desc"?vis.slice().reverse():vis;
+const note=document.getElementById("logNote");if(note)note.textContent=vis.length===EVENTS.length?`All ${EVENTS.length} events. Follows the lane and type filters above.`:`${vis.length} of ${EVENTS.length} events, matching the lane and type filters above.`;
+if(!vis.length)lg.innerHTML=`<p class="empty">No events match the current filters.</p>`;
 list.forEach(e=>{if(e.y!==yr){yr=e.y;box=document.createElement("div");box.className="log-year";box.innerHTML=`<h3>${yr}</h3>`;lg.appendChild(box);}
   box.insertAdjacentHTML("beforeend",`<div class="row" style="--c:var(--c-${e.l})"><div class="d">${fmt(e.d)}</div><div class="ln"><i></i>${esc(laneName(e.l))}</div><div class="c"><button class="t" type="button" data-go="${e.i}" data-scroll="1">${VAL[e.v][0]} ${esc(e.t)}</button><p>${esc(e.s)}</p><div class="src"><a href="${e.u}" target="_blank" rel="noopener">${esc(e.src)} ↗</a>${e.tg.length?" · "+e.tg.map(esc).join(" · "):""}</div></div></div>`);});}
 renderLog();
