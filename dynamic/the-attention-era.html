@@ -277,13 +277,7 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--rule);font-si
   <header class="top">
     <div class="eyebrow">An explorable timeline of AI · 2017 → 12 October 2026 · emphasis on 2022 onward</div>
     <h1>The Attention Era<span class="q">.</span></h1>
-    <p class="lede">An animated interactive timeline of key events from transformers to present day. <a href="#concepts">Concepts</a>, <a href="#prompts">prompts</a>, <a href="#terms">glossary</a> and a full <a href="#log">list</a> of events.</p>
-    <div class="legend-row" aria-label="Legend">
-      <span><b>▲</b> progress or capability gain</span>
-      <span><b>▼</b> harm, failure or incident</span>
-      <span><b>◆</b> contested or mixed</span>
-      <span>Hatched area = 2017–2021, compressed · use Zoom for the dense 2025–26 stretch</span>
-    </div>
+    <p class="lede">An animated interactive timeline of key events from transformers to present day, with a full <a href="#log">list of events</a>, <a href="#concepts">concepts</a>, <a href="#prompts">prompts</a> and a <a href="#terms">glossary</a>.</p>
   </header>
 
   <section class="player" id="player" aria-label="Timeline player">
@@ -336,7 +330,6 @@ footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--rule);font-si
   <section class="block" id="log">
     <div class="sec-h">
       <h2>All events</h2>
-      <p id="logNote">Follows the lane and type filters above.</p>
       <div class="seg" role="group" aria-label="Log order" style="margin-top:10px;width:max-content;justify-self:start;align-self:start">
         <button class="btn" type="button" data-logorder="desc" aria-pressed="true">Newest first</button>
         <button class="btn" type="button" data-logorder="asc" aria-pressed="false">Oldest first</button>
@@ -384,6 +377,7 @@ const LANES=[
   {k:"biz",n:"Business & compute"},{k:"pol",n:"Policy & law"},
   {k:"saf",n:"Safety & security"},{k:"soc",n:"Society & culture"},{k:"mnd",n:"Minds & moral status"}];
 const VAL={"+":["▲","progress"],"-":["▼","harm / incident"],"~":["◆","contested"]};
+const VALD={"+":"progress or capability gain","-":"harm, failure or incident","~":"contested or mixed"};
 
 /* d: date, l: lane, v: valence, t: title, s: summary, tg: tags, u: source url, src: source name, f: figure key, p: prompt key */
 const EVENTS=[
@@ -1399,7 +1393,7 @@ for(let y=2017;y<=2026;y++){const t=document.createElement("div");t.className="y
 [[2025,3],[2025,6],[2025,9],[2026,3],[2026,6],[2026,9]].forEach(([y,m])=>{const t=document.createElement("div");t.className="ytick q";t.style.left=xp(Date.UTC(y,m,1))+"%";t.innerHTML=`<b>${MON[m]}</b>`;lanesEl.appendChild(t);});
 const nowMs=Date.UTC(2026,9,12);lanesEl.insertAdjacentHTML("beforeend",`<div class="nowmark" style="left:${xp(nowMs)}%"><b>now</b></div>`);
 const dots=EVENTS.map(e=>{const b=document.createElement("button");b.type="button";b.className="dot";b.style.setProperty("--c",`var(--c-${e.l})`);
-  b.style.left=xp(e.ms)+"%";b.style.top=(6+laneIdx(e.l)*22+11)+"px";b.setAttribute("aria-label",fmt(e.d)+": "+e.t);b.title=fmt(e.d)+" · "+e.t;b.tabIndex=-1;
+  b.style.left=xp(e.ms)+"%";b.style.top=(6+laneIdx(e.l)*22+11)+"px";const vd=VALD[e.v];b.setAttribute("aria-label",fmt(e.d)+": "+e.t+" ("+vd+")");b.title=fmt(e.d)+" · "+e.t+"\n"+VAL[e.v][0]+" "+vd;b.tabIndex=-1;
   b.addEventListener("click",()=>{go(e.i,true);});lanesEl.appendChild(b);return b;});
 const playhead=document.getElementById("playhead");
 
@@ -1851,7 +1845,6 @@ GLOSSARY.forEach(([t,d])=>gl.insertAdjacentHTML("beforeend",`<div><dt>${esc(t)}<
 /* ---------- log ---------- */
 const lg=document.getElementById("logList");
 function renderLog(){if(!lg)return;lg.innerHTML="";let yr=null,box=null;const vis=EVENTS.filter(visible);const list=st.logOrder==="desc"?vis.slice().reverse():vis;
-const note=document.getElementById("logNote");if(note)note.textContent=vis.length===EVENTS.length?`All ${EVENTS.length} events. Follows the lane and type filters above.`:`${vis.length} of ${EVENTS.length} events, matching the lane and type filters above.`;
 if(!vis.length)lg.innerHTML=`<p class="empty">No events match the current filters.</p>`;
 list.forEach(e=>{if(e.y!==yr){yr=e.y;box=document.createElement("div");box.className="log-year";box.innerHTML=`<h3>${yr}</h3>`;lg.appendChild(box);}
   box.insertAdjacentHTML("beforeend",`<div class="row" style="--c:var(--c-${e.l})"><div class="d">${fmt(e.d)}</div><div class="ln"><i></i>${esc(laneName(e.l))}</div><div class="c"><button class="t" type="button" data-go="${e.i}" data-scroll="1">${VAL[e.v][0]} ${esc(e.t)}</button><p>${esc(e.s)}</p><div class="src"><a href="${e.u}" target="_blank" rel="noopener">${esc(e.src)} ↗</a>${e.tg.length?" · "+e.tg.map(esc).join(" · "):""}</div></div></div>`);});}
