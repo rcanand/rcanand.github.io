@@ -7,6 +7,14 @@
             <a href="/blog/x-threads/" {% if page.url == "/blog/x-threads/" %} class="active" {% endif %}>X threads</a>
             <a href="/blog/products/" {% if page.url == "/blog/products/" %} class="active" {% endif %}>Products</a>
             <a href="/blog/" {% if page.url == "/blog/" %} class="active" {% endif %}>Blog</a>
+            <span class="nav-dd">
+                <input type="checkbox" id="nav-dd-dynamic" class="nav-dd-toggle" aria-label="Toggle dynamic pages menu">
+                <label for="nav-dd-dynamic" class="nav-dd-label{% if page.url contains '/dynamic/' %} active{% endif %}">Dynamic <span class="nav-dd-caret" aria-hidden="true">&#9662;</span></label>
+                <div class="nav-dd-menu" aria-label="Dynamic pages">
+                    <a href="/dynamic/the-attention-era/"{% if page.url contains 'the-attention-era' %} class="active"{% endif %}>The Attention Era</a>
+                    <a href="/dynamic/cyber-threat-week-2026-10-22/"{% if page.url contains 'cyber-threat-week' %} class="active"{% endif %}>Cyber Threat Week</a>
+                </div>
+            </span>
             <a href="/blog/search/" {% if page.url == "/blog/search/" %} class="active" {% endif %}>Search</a>
             <a href="/blog/about/" {% if page.url == "/blog/about/" %} class="active" {% endif %}>About</a>
         </div>
