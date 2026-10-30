@@ -34,11 +34,9 @@
     }
 }
 .tag-sidebar-title {
-    font-family: var(--mono);
-    font-size: 0.7rem;
+    font-family: var(--sans);
+    font-size: 0.77rem;
     font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
     color: var(--text-faint);
     margin: 0 0 0.85rem;
 }
@@ -64,8 +62,8 @@
     background: var(--accent-dim);
 }
 .tag-count {
-    font-family: var(--mono);
-    font-size: 0.7rem;
+    font-family: var(--sans);
+    font-size: 0.77rem;
     color: var(--text-faint);
 }
 .tag-list .tag-item.active .tag-count { color: var(--accent); }
@@ -86,8 +84,8 @@
         background: var(--bg-soft);
         border: 1px solid var(--border-lt);
         border-radius: 999px;
-        font-family: var(--mono);
-        font-size: 0.72rem;
+        font-family: var(--sans);
+        font-size: 0.79rem;
         color: var(--text-dim);
         cursor: pointer;
         transition: color var(--dur), border-color var(--dur), background var(--dur);
@@ -162,8 +160,8 @@
 .blog-list li:last-child { border-bottom: none; }
 .blog-list li:hover { background: var(--bg-soft); }
 .blog-date {
-    font-family: var(--mono);
-    font-size: 0.76rem;
+    font-family: var(--sans);
+    font-size: 0.83rem;
     color: var(--text-faint);
     white-space: nowrap;
     transition: color var(--dur);
@@ -173,8 +171,8 @@
 .blog-title a { color: var(--heading); transition: color var(--dur); }
 .blog-title a:hover { color: var(--accent); }
 .blog-read {
-    font-family: var(--mono);
-    font-size: 0.66rem;
+    font-family: var(--sans);
+    font-size: 0.73rem;
     letter-spacing: 0.05em;
     color: var(--text-faint);
     white-space: nowrap;
@@ -198,7 +196,7 @@
     margin-top: 0.45rem;
 }
 .post-tag {
-    font-family: var(--mono); font-size: 0.7rem;
+    font-family: var(--sans); font-size: 0.77rem;
     color: var(--text-dim);
     padding: 0.1rem 0.55rem;
     border: 1px solid var(--border);
@@ -214,7 +212,7 @@
 }
 
 .post-meta .chip {
-    font-family: var(--mono); font-size: 0.72rem;
+    font-family: var(--sans); font-size: 0.79rem;
     color: var(--text-dim); text-decoration: none;
     padding: 0.15rem 0.65rem;
     border: 1px solid var(--border-lt);
@@ -248,7 +246,7 @@
 .post-meta {
     display: flex; gap: 0.6rem; flex-wrap: wrap;
     align-items: center;
-    font-family: var(--mono); font-size: 0.78rem;
+    font-family: var(--sans); font-size: 0.85rem;
     color: var(--text-dim);
 }
 
@@ -257,22 +255,24 @@
 }
 .post-body h1, .post-body h2 {
     font-family: var(--serif);
-    font-weight: 400;
+    font-weight: 500;
     margin: 2.6rem 0 0.85rem;
-    color: var(--heading);
 }
-.post-body h2 { font-size: 1.75rem; letter-spacing: 0.005em; }
+.post-body h2 { font-size: 1.75rem; letter-spacing: -0.01em; }
 .post-body h3 {
     font-size: 1.16rem;
     margin: 2.1rem 0 0.7rem;
-    color: var(--heading);
 }
 .post-body h4 {
     font-size: 0.95rem;
     margin: 1.75rem 0 0.6rem;
-    color: var(--heading);
 }
+/* a heading keeps its level color; emphasis inside it stays upright */
+.post-body :is(h1, h2, h3, h4, h5, h6) :is(em, strong) { color: inherit; font-style: normal; }
 .post-body p { margin-bottom: 1.15rem; }
+.post-body em { color: var(--em); }
+.post-body del { color: var(--text-faint); }
+.post-body mark { background: rgba(246, 217, 118, 0.18); color: var(--h2); border-radius: 2px; }
 .post-body a {
     color: var(--accent);
     text-decoration: underline;
@@ -286,20 +286,21 @@
 .post-body ul, .post-body ol { margin: 0 0 1.15rem 1.4rem; }
 .post-body li { margin-bottom: 0.4rem; padding-left: 0.2rem; }
 .post-body li::marker { color: var(--accent); }
+.post-body ol > li::marker { color: var(--strong); }
 
 .post-body blockquote {
-    border-left: 2px solid var(--accent);
-    background: var(--accent-dim);
+    border-left: 2px solid var(--h4);
+    background: rgba(157, 184, 255, 0.08);
     border-radius: 0 var(--radius) var(--radius) 0;
     padding: 0.9rem 1.25rem;
     margin: 1.5rem 0;
-    color: var(--text-dim);
+    color: var(--quote);
     font-family: var(--serif);
     font-size: 1.18rem;
-    font-style: italic;
     line-height: 1.6;
 }
 .post-body blockquote p:last-child { margin-bottom: 0; }
+.post-body blockquote em { font-style: normal; color: var(--h4); }
 
 .post-body img {
     max-width: 100%;
@@ -318,10 +319,10 @@
     border: 1px solid var(--border);
     padding: 0.1em 0.4em;
     border-radius: 5px;
-    color: var(--accent-lt);
+    color: var(--code);
 }
 .post-body pre {
-    background: var(--bg-soft);
+    background: var(--bg-ink);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 1rem 1.15rem;
@@ -366,12 +367,10 @@
 }
 .post-body tbody tr:last-child td { border-bottom: none; }
 .post-body thead th {
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    font-weight: 500;
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    color: var(--h3);
+    font-weight: 600;
     background: var(--bg-soft);
     border-bottom: 1px solid var(--border-lt);
 }
@@ -389,7 +388,7 @@
 }
 
 .post-body sup > a.footnote {
-    font-family: var(--mono);
+    font-family: var(--sans);
     font-size: 0.72em;
     padding: 0 0.15em;
     text-decoration: none;
@@ -424,8 +423,8 @@
     margin-bottom: 0.5rem;
 }
 .post-body blockquote.twitter-tweet:not([class*=' twitter-tweet-rendered']) a {
-    font-family: var(--mono);
-    font-size: 0.8rem;
+    font-family: var(--sans);
+    font-size: 0.87rem;
     color: var(--accent);
 }
 
