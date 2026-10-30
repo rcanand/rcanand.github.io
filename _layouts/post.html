@@ -51,12 +51,50 @@ layout: default
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
 <script>
+  // Single $ is ambiguous between currency and inline math, so it is not a KaTeX
+  // delimiter. A $...$ pair is rewritten to \(...\) only if it passes isInlineMath;
+  // every other $ stays plain text. When unsure, prefer text: a wrong guess shows a
+  // raw $x$, while the reverse garbles a paragraph. $$...$$ in markdown is always math.
+  function isInlineMath(before, body, after) {
+    if (!body) return false;
+    if (/[a-z0-9]/i.test(before)) return false; // US$5, 200$
+    if (/\d/.test(after)) return false; // $20-$250, $2/$10
+    if (/^\s/.test(body) || /[\s\/,(\-‐-―]$/.test(body)) return false; // at $20, $GOOG/$MSFT
+    var bare = body.replace(/\\[a-z]+(\{[^}]*\})?/gi, " ");
+    return !/(^|\s)[a-z]{3,}(?=[\s.,;:!?]|$)/i.test(bare); // $5 and 200$
+  }
+
+  function markInlineMath(text) {
+    // Explicit math and \$ are skipped so a $ inside them is never treated as an opener.
+    var token = /\\\([\s\S]*?\\\)|\\\[[\s\S]*?\\\]|\$\$[\s\S]*?\$\$|\\\$|\$((?:\\[\s\S]|[^$\\])*)\$/g;
+    var out = "", pos = 0, m;
+    while ((m = token.exec(text))) {
+      if (m[1] === undefined) continue;
+      if (isInlineMath(text.charAt(m.index - 1), m[1], text.charAt(token.lastIndex))) {
+        out += text.slice(pos, m.index) + "\\(" + m[1] + "\\)";
+        pos = token.lastIndex;
+      } else {
+        // The closing $ of a rejected pair can still open the next one.
+        token.lastIndex = m.index + 1;
+      }
+    }
+    return out + text.slice(pos);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     if (window.renderMathInElement) {
-      renderMathInElement(document.querySelector(".post-body"), {
+      var body = document.querySelector(".post-body");
+      body.normalize();
+      var walker = document.createTreeWalker(body, NodeFilter.SHOW_TEXT);
+      while (walker.nextNode()) {
+        var node = walker.currentNode;
+        if (!node.parentElement.closest("script, noscript, style, textarea, pre, code, option")) {
+          node.nodeValue = markInlineMath(node.nodeValue);
+        }
+      }
+      renderMathInElement(body, {
         delimiters: [
           { left: "$$", right: "$$", display: true },
-          { left: "$", right: "$", display: false },
           { left: "\\(", right: "\\)", display: false },
           { left: "\\[", right: "\\]", display: true }
         ],
